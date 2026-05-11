@@ -30,7 +30,7 @@ const baseCronicas = {
     'derbi-pesquera': {
         titulo: "Épica Victoria en el Derbi: El Rayo reina en los penaltis",
         fecha: "Derbi Comarcal - Temporada 2026",
-        imagen: "foto-partido1.jpg", // Esta es la foto que sale en la lista
+        imagen: "foto-partido1.jpg.jpeg", // Esta es la foto que sale en la lista
         texto: `
             <p class="intro" style="font-size:1.1rem; font-weight:500; margin-bottom:15px;">Se respiraba aroma de las grandes citas en la <strong>Fuente del Recreo</strong>. Las gradas, abarrotadas por una afición volcada, presentaban un aspecto espectacular para recibir un derbi que prometía chispas desde el pitido inicial.</p>
             
