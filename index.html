@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <button class="mobile-menu-btn" id="mobile-btn">
@@ -26,12 +28,13 @@
                 <li><a href="#merchandising"><i class="fas fa-shopping-bag"></i> Merchandising</a></li>
                 <li><a href="#estadio"><i class="fas fa-map-marker-alt"></i> Estadio</a></li>
                 <li><a href="#patrocinadores"><i class="fas fa-handshake"></i> Patrocinadores</a></li>
+                <li><a href="#resumenes"><i class="fas fa-file-alt"></i> Resúmenes</a></li>
             </ul>
         </nav>
     </aside>
 
     <main class="main-content">
-        
+
         <section id="inicio" class="content-section active">
             <div class="welcome-banner">
                 <h1>Bienvenidos al Rayo</h1>
@@ -50,7 +53,9 @@
         </section>
 
         <section id="plantilla" class="content-section">
-            <div class="section-title"><h2>Nuestra Plantilla</h2></div>
+            <div class="section-title">
+                <h2>Nuestra Plantilla</h2>
+            </div>
             <div class="coming-soon-card">
                 <i class="fas fa-tshirt"></i>
                 <h3>Próximamente</h3>
@@ -60,82 +65,112 @@
         </section>
 
         <section id="partidos" class="content-section">
-            <div class="section-title"><h2>Calendario</h2></div>
+            <div class="section-title">
+                <h2>Calendario</h2>
+            </div>
             <div class="card">
                 <p><strong>Proximamente</strong></p>
                 <p>... | ...</p>
             </div>
         </section>
 
-       <section id="merchandising" class="content-section">
-    <div class="section-title"><h2>Merchandising</h2></div>
-    
-    <div class="product-grid">
-        <div class="product-card">
-            <div class="product-img-container">
-                <img src="camisetalocal.png" alt="Camiseta" class="img-merch">
+        <section id="merchandising" class="content-section">
+            <div class="section-title">
+                <h2>Merchandising</h2>
             </div>
-            <div class="product-info">
-                <h3>Camiseta Oficial</h3>
-                <p>Primera Equipación</p>
-            </div>
-        </div>
 
-        <div class="product-card">
-            <div class="product-img-container">
-                <img src="equipacioncompleta.png" alt="Pack" class="img-merch">
-            </div>
-            <div class="product-info">
-                <h3>Pack Completo</h3>
-                <p>Equipación y medias</p>
-            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <img src="camisetalocal.png" alt="Camiseta" class="img-merch">
+                    </div>
+                    <div class="product-info">
+                        <h3>Camiseta Oficial</h3>
+                        <p>Primera Equipación</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <img src="equipacioncompleta.png" alt="Pack" class="img-merch">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pack Completo</h3>
+                        <p>Equipación y medias</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="estadio" class="content-section">
-            <div class="section-title"><h2>Estadio</h2></div>
+            <div class="section-title">
+                <h2>Estadio</h2>
+            </div>
             <div class="card">
                 <p>📍 Fuente del Recreo, Minglanilla</p>
             </div>
         </section>
 
-    <section id="patrocinadores" class="content-section">
-    <div class="section-title"><h2>Nuestros Patrocinadores</h2></div>
-    
-    <div class="sponsors-grid">
-        <div class="sponsor-card">
-            <div class="sponsor-img-box">
-                <img src="sponsor1.png" alt="Sponsor" class="img-logo">
+        <section id="patrocinadores" class="content-section">
+            <div class="section-title">
+                <h2>Nuestros Patrocinadores</h2>
             </div>
-            <p>CACHI PUB</p>
+
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-img-box">
+                        <img src="sponsor1.png" alt="Sponsor" class="img-logo">
+                    </div>
+                    <p>CACHI PUB</p>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-img-box">
+                        <img src="sponsor2.png" alt="Sponsor" class="img-logo">
+                    </div>
+                    <p>TIBURONES DEL PERREO</p>
+                </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-img-box">
+                        <img src="sponsor3.png" alt="Sponsor" class="img-logo">
+                    </div>
+                    <p>ADRIAN GARCIA DJ</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cronica-card" onclick="abrirCronica('derbi-pesquera')">
+    <div class="cronica-img-box">
+        <img src="foto-portada-derbi.jpg" alt="Victoria Derbi" class="img-fixed">
+    </div>
+    <div class="cronica-info">
+        <h4>¡El Derbi es Nuestro!</h4>
+        <p>El Rayo tumba a La Pesquera en una tarde histórica en la Fuente del Recreo...</p>
+        <small>Leer crónica completa →</small>
+    </div>
+</div>
+
         </div>
 
-        <div class="sponsor-card">
-            <div class="sponsor-img-box">
-                <img src="sponsor2.png" alt="Sponsor" class="img-logo">
+    <div id="detalle-cronica" class="detalle-box" style="display: none;">
+        <button onclick="volverALista()" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver atrás</button>
+        <div id="contenido-cronica">
             </div>
-            <p>TIBURONES DEL PERREO</p>
-        </div>
-        <div class="sponsor-card">
-            <div class="sponsor-img-box">
-                <img src="sponsor3.png" alt="Sponsor" class="img-logo">
-            </div>
-            <p>ADRIAN GARCIA DJ</p>
-        </div>
     </div>
 </section>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
 </section>
-    </main>
+</main>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
+
 </html>

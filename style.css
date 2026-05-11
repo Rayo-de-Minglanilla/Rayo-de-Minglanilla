@@ -212,3 +212,51 @@ body {
     font-weight: bold;
     color: var(--granate);
 }
+/* --- ESTILO DE CRÓNICAS --- */
+.cronicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.cronica-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cronica-card:hover { transform: translateY(-5px); }
+
+.cronica-img-box { width: 100%; height: 160px; overflow: hidden; }
+
+.cronica-info { padding: 15px; }
+.cronica-info h4 { color: var(--granate); margin-bottom: 5px; }
+.cronica-info p { font-size: 0.9rem; color: #555; }
+
+/* VISOR DE DETALLE */
+.detalle-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    line-height: 1.6;
+}
+
+.btn-volver {
+    background: var(--azul-oscuro);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.intro { font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; color: #333; }
+.foto-cronica, .video-container { margin: 25px 0; text-align: center; background: #f9f9f9; padding: 10px; border-radius: 10px; }
+.img-cronica { width: 100%; border-radius: 5px; }
+.pie-foto, .pie-video { font-style: italic; font-size: 0.85rem; color: #666; margin-top: 8px; }
+.texto-completo h3 { color: var(--granate); margin: 25px 0 10px 0; }
+.conclusion { font-weight: bold; border-left: 4px solid var(--amarillo-rayo); padding-left: 15px; margin-top: 30px; }
