@@ -25,15 +25,16 @@ body {
     background-attachment: fixed;
 }
 
-/* --- BARRA LATERAL --- */
+/* --- BARRA LATERAL (Escritorio) --- */
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
     background: var(--azul-oscuro);
     color: white;
     position: fixed;
-    z-index: 1000;
+    z-index: 9999;
     border-right: 4px solid var(--amarillo-rayo);
+    transition: 0.3s ease;
 }
 
 .sidebar-header { padding: 30px 20px; text-align: center; }
@@ -73,7 +74,50 @@ body {
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- BANNERS Y TÍTULOS --- */
+/* --- BOTÓN MENÚ MÓVIL --- */
+.mobile-menu-btn {
+    display: none; /* Oculto en PC */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 10000;
+    background: var(--granate);
+    color: white;
+    border: 2px solid var(--amarillo-rayo);
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- RESPONSIVE MÓVIL (768px o menos) --- */
+@media (max-width: 768px) {
+    .mobile-menu-btn { 
+        display: flex; /* Se muestra en móvil */
+    }
+
+    .sidebar {
+        left: -280px; /* Escondido a la izquierda */
+    }
+
+    .sidebar.open {
+        left: 0; /* Aparece al pulsar botón */
+    }
+
+    .main-content { 
+        margin-left: 0; 
+        width: 100%; 
+        padding: 20px;
+        padding-top: 80px; 
+    }
+
+    .welcome-banner { padding: 40px 20px; }
+}
+
+/* --- ESTILOS DE COMPONENTES (Contador, Tarjetas, etc) --- */
 .welcome-banner {
     background: rgba(10, 33, 68, 0.8); 
     color: white;
@@ -94,207 +138,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- TARJETAS (GENERAL Y PRODUCTOS) --- */
-.card, .product-card { 
-    background: rgba(255, 255, 255, 0.95); 
-    border-radius: 15px; 
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-/* Estilos para móviles */
-@media (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        left: -260px; /* Lo saca de la pantalla por la izquierda */
-        top: 0;
-        bottom: 0;
-        transition: all 0.3s ease;
-        z-index: 9999;
-    }
-
-    /* Cuando el JS añade la clase "open", el menú entra en pantalla */
-    .sidebar.open {
-        left: 0;
-    }
-
-    .mobile-menu-btn {
-        display: block !important; /* Fuerza a que se vea el botón de las rayas */
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 10000;
-        background: #7a1b2e;
-        color: white;
-        border: none;
-        width: 45px;
-        height: 45px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1.2rem;
-    }
-}
-
-/* --- GRID DE MERCHANDISING --- */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* --- AJUSTE DEFINITIVO PARA LA IMAGEN DEL PRODUCTO --- */
-.product-card img {
-    width: 100%;
-    height: 250px;       /* Altura fija para que todas las tarjetas midan lo mismo */
-    object-fit: contain; /* Esto evita que la camiseta se estire o se corte */
-    background: white;   /* Fondo blanco detrás de la imagen */
-    display: block;
-    padding: 20px;       /* Espacio para que la imagen no toque los bordes */
-}
-
-.product-info {
-    padding: 20px;
-    background: white;
-}
-
-.product-info h3 {
-    font-size: 1.2rem;
-    color: var(--azul-oscuro);
-    margin-bottom: 5px;
-}
-
-.product-info p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* --- RESPONSIVE MÓVIL --- */
-.mobile-menu-btn {
-    display: none;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1100;
-    background: var(--granate);
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--amarillo-rayo);
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .mobile-menu-btn { display: block; }
-    .sidebar { left: -100%; }
-    .sidebar.open { left: 0; }
-    .main-content { 
-        margin-left: 0; 
-        width: 100%; 
-        padding: 20px;
-        padding-top: 80px; 
-    }
-    .welcome-banner { padding: 40px 20px; }
-}
-/* --- DOMANDO LOS LOGOS DE SPONSORS --- */
-.sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-.sponsor-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* La caja que limita el tamaño */
-.sponsor-img-box {
-    width: 100%;
-    height: 120px; /* Altura máxima del logo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-
-/* El logo propiamente dicho */
-.img-logo {
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-}
-
-.sponsor-card p {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--granate);
-}
-/* --- ESTILO DE CRÓNICAS --- */
-.cronicas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.cronica-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.cronica-card:hover { transform: translateY(-5px); }
-
-.cronica-img-box { width: 100%; height: 160px; overflow: hidden; }
-
-.cronica-info { padding: 15px; }
-.cronica-info h4 { color: var(--granate); margin-bottom: 5px; }
-.cronica-info p { font-size: 0.9rem; color: #555; }
-
-/* VISOR DE DETALLE */
-.detalle-box {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    line-height: 1.6;
-}
-
-.btn-volver {
-    background: var(--azul-oscuro);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-.intro { font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; color: #333; }
-.foto-cronica, .video-container { margin: 25px 0; text-align: center; background: #f9f9f9; padding: 10px; border-radius: 10px; }
-.img-cronica { width: 100%; border-radius: 5px; }
-.pie-foto, .pie-video { font-style: italic; font-size: 0.85rem; color: #666; margin-top: 8px; }
-.texto-completo h3 { color: var(--granate); margin: 25px 0 10px 0; }
-.conclusion { font-weight: bold; border-left: 4px solid var(--amarillo-rayo); padding-left: 15px; margin-top: 30px; }
-
-
-/* --- ESTILO DEL CONTADOR DE PATERNIDAD --- */
 .paternidad-box {
     background: linear-gradient(145deg, #0a2144, #7a1b2e);
     color: white;
@@ -307,32 +150,45 @@ body {
     max-width: 500px;
 }
 
-.paternidad-header {
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    color: var(--amarillo-rayo);
-    margin-bottom: 10px;
-}
-
 #contador-dias {
     font-size: 5rem;
     font-weight: 900;
-    margin: 10px 0;
     text-shadow: 3px 3px 0px #000;
 }
 
-.paternidad-content p {
-    font-size: 1.1rem;
-    font-style: italic;
-    opacity: 0.9;
+/* --- MERCHANDISING --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
 }
 
-.paternidad-footer {
-    margin-top: 15px;
-    font-size: 0.8rem;
-    background: rgba(0,0,0,0.3);
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 20px;
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: white;
+    display: block;
+    padding: 20px;
+}
+
+/* --- SPONSORS --- */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.sponsor-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.img-logo {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
 }
