@@ -91,14 +91,16 @@ function abrirCronica(id) {
     const contenido = document.getElementById('contenido-cronica');
 
     if (partido && lista && detalle && contenido) {
+        // Esta línea es la que "dibuja" la crónica nueva dentro del div blanco
         contenido.innerHTML = `
-            <h1 style="color:#7a1b2e;">${partido.titulo}</h1>
-            <p><small>${partido.fecha}</small></p>
-            <hr style="margin:15px 0;">
-            <div>${partido.texto}</div>
+            <h1 style="color:#7a1b2e; margin-bottom:10px;">${partido.titulo}</h1>
+            <p style="color:#666; font-size:0.9rem;">${partido.fecha}</p>
+            <hr style="margin:20px 0; opacity:0.2;">
+            <div class="texto-cronica">${partido.texto}</div>
         `;
-        lista.style.display = 'none';
-        detalle.style.display = 'block';
+        
+        lista.style.display = 'none';   // Esconde la cuadrícula de fotos
+        detalle.style.display = 'block'; // Muestra la hoja blanca con el video
         window.scrollTo(0, 0);
     }
 }
