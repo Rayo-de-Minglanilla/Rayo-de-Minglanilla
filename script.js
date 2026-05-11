@@ -92,3 +92,28 @@ function volverALista() {
     document.getElementById('lista-cronicas').style.display = 'grid';
     document.getElementById('detalle-cronica').style.display = 'none';
 }
+function switchTab(event, tabId) {
+    // Ocultar contenidos
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(c => c.style.display = 'none');
+    
+    // Resetear botones
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(b => {
+        b.style.background = '#ddd';
+        b.style.color = '#333';
+    });
+
+    // Mostrar el seleccionado
+    const activeTab = document.getElementById(tabId);
+    activeTab.style.display = 'block';
+
+    // Estilo del botón activo según la pestaña
+    if (tabId === 'tab-diccionario') {
+        event.currentTarget.style.background = '#7a1b2e';
+        event.currentTarget.style.color = 'white';
+    } else {
+        event.currentTarget.style.background = '#f1c40f';
+        event.currentTarget.style.color = 'black';
+    }
+}
