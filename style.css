@@ -1,0 +1,133 @@
+:root {
+    --granate: #7a1b2e;
+    --azul-oscuro: #0a2144;
+    --amarillo-rayo: #f1c40f;
+    --blanco: #ffffff;
+    --sidebar-width: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex; /* Para que la sidebar y el contenido estén uno al lado del otro */
+    background-color: #f0f2f5;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--azul-oscuro);
+    color: white;
+    position: fixed;
+    border-right: 4px solid var(--amarillo-rayo);
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.sidebar-menu li a i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.sidebar-menu li a:hover, .sidebar-menu li a.active {
+    background-color: var(--granate);
+    border-left: 5px solid var(--amarillo-rayo);
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+    margin-left: var(--sidebar-width); /* Deja espacio para la sidebar */
+    width: calc(100% - var(--sidebar-width));
+    padding: 40px;
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--granate));
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--granate);
+    margin-top: 10px;
+}
+/* Estilo para el enlace de compra */
+.btn-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: var(--azul-oscuro);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-link:hover {
+    background-color: var(--granate);
+    border-color: var(--amarillo-rayo);
+    transform: scale(1.05);
+}
+
+.btn-link i {
+    margin-left: 8px;
+    font-size: 0.8rem;
+}
+
+/* Ajuste de imagen para que se vean bien tus PNGs */
+.product-card img {
+    width: 100%;
+    height: 250px; /* Un poco más alto para que luzca la equipación */
+    object-fit: contain; /* Para que no se corte el diseño de tus camisetas */
+    background: #f9f9f9; /* Fondo suave para resaltar el PNG */
+    padding: 10px;
+}
