@@ -108,6 +108,38 @@ body {
 .product-card:hover {
     transform: translateY(-5px);
 }
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -260px; /* Lo saca de la pantalla por la izquierda */
+        top: 0;
+        bottom: 0;
+        transition: all 0.3s ease;
+        z-index: 9999;
+    }
+
+    /* Cuando el JS añade la clase "open", el menú entra en pantalla */
+    .sidebar.open {
+        left: 0;
+    }
+
+    .mobile-menu-btn {
+        display: block !important; /* Fuerza a que se vea el botón de las rayas */
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 10000;
+        background: #7a1b2e;
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+}
 
 /* --- GRID DE MERCHANDISING --- */
 .product-grid {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     actualizarContador();
 
-    // 2. NAVEGACIÓN DEL MENÚ (Corregida para nuevas secciones)
+    // 2. NAVEGACIÓN DEL MENÚ
     const links = document.querySelectorAll('.sidebar-menu a');
     const sections = document.querySelectorAll('.content-section');
     const sidebar = document.getElementById('sidebar');
@@ -40,10 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     links.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
 
-                    // Cerrar sidebar en móviles
+                    // CERRAR AUTOMÁTICAMENTE AL HACER CLICK EN UN ENLACE (Móvil)
                     if (sidebar) sidebar.classList.remove('open');
                     
-                    // Si vas a resúmenes, asegúrate de ver la lista, no una crónica abierta
                     if (targetId === 'resumenes') volverALista();
                     
                     window.scrollTo(0, 0);
@@ -51,9 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 3. LÓGICA DEL BOTÓN MÓVIL (MENÚ HAMBURGUESA)
+    const mobileBtn = document.getElementById('mobile-btn');
+
+    if (mobileBtn && sidebar) {
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que el click se propague
+            sidebar.classList.toggle('open');
+        });
+
+        // Cerrar el menú si haces click en el contenido principal mientras está abierto
+        document.querySelector('.main-content').addEventListener('click', () => {
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+    }
 });
 
-// 3. BASE DE DATOS DE CRÓNICAS
+// 4. BASE DE DATOS DE CRÓNICAS
 const baseCronicas = {
     'derbi-pesquera': {
         titulo: "Épica Victoria en el Derbi: El Rayo reina en los penaltis",
@@ -67,7 +83,7 @@ const baseCronicas = {
     }
 };
 
-// 4. FUNCIONES DE CRÓNICAS (Abrir/Cerrar)
+// 5. FUNCIONES DE CRÓNICAS (Abrir/Cerrar)
 function abrirCronica(id) {
     const partido = baseCronicas[id];
     const lista = document.getElementById('lista-cronicas');
