@@ -38,7 +38,7 @@ const baseCronicas = {
             <p class="intro">Se respiraba aroma de las grandes citas en la <strong>Fuente del Recreo</strong>. Las gradas, abarrotadas por una afición volcada, presentaban un aspecto espectacular para recibir un derbi que prometía chispas desde el pitido inicial.</p>
             
             <div class="foto-cronica">
-                <img src="foto-partido1.jpg" alt="11 Titular" class="img-cronica">
+                <img src="foto-partido1.jpg.jpeg" alt="11 Titular" class="img-cronica">
                 <p class="pie-foto">Los 11 guerreros del Rayo de Minglanilla que defendieron el escudo.</p>
             </div>
 
