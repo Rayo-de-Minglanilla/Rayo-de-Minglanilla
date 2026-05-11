@@ -11,15 +11,13 @@
     box-sizing: border-box; 
 }
 
-/* EL CUERPO DE LA WEB */
+/* --- CUERPO Y FONDO --- */
 body { 
     font-family: 'Segoe UI', sans-serif; 
     display: flex; 
     min-height: 100vh;
     color: #333;
-    background-color: #000; /* Fondo negro de seguridad mientras carga la imagen */
-    
-    /* CONFIGURACIÓN DEL FONDO */
+    background-color: #000;
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fondo.png');
     background-size: cover;
     background-position: center center;
@@ -27,7 +25,7 @@ body {
     background-attachment: fixed;
 }
 
-/* BARRA LATERAL (Sidebar) */
+/* --- BARRA LATERAL --- */
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
@@ -40,6 +38,7 @@ body {
 
 .sidebar-header { padding: 30px 20px; text-align: center; }
 .sidebar-logo { width: 80px; margin-bottom: 10px; }
+
 .sidebar-menu a {
     display: block;
     padding: 15px 25px;
@@ -47,19 +46,20 @@ body {
     text-decoration: none;
     transition: 0.3s;
 }
+
 .sidebar-menu a.active, .sidebar-menu a:hover {
     background: var(--granate);
     border-left: 5px solid var(--amarillo-rayo);
 }
 
-/* CONTENIDO PRINCIPAL */
+/* --- CONTENIDO PRINCIPAL --- */
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
     padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Esto centra el contenido horizontalmente */
+    align-items: center; 
 }
 
 .content-section { 
@@ -73,7 +73,7 @@ body {
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* TARJETAS CON TRANSPARENCIA (Para que se vea el fondo) */
+/* --- BANNERS Y TÍTULOS --- */
 .welcome-banner {
     background: rgba(10, 33, 68, 0.8); 
     color: white;
@@ -82,15 +82,7 @@ body {
     margin-bottom: 30px;
     text-align: center;
     border: 2px solid var(--amarillo-rayo);
-}
-
-.card, .product-card { 
-    background: rgba(255, 255, 255, 0.9); /* Blanco semi-transparente */
-    padding: 25px; 
-    border-radius: 15px; 
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
+    width: 100%;
 }
 
 .section-title h2 {
@@ -102,27 +94,22 @@ body {
     margin-bottom: 20px;
 }
 
-/* RESPONSIVE MÓVIL */
-.mobile-menu-btn {
-    display: none;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1100;
-    background: var(--granate);
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--amarillo-rayo);
+/* --- TARJETAS (GENERAL Y PRODUCTOS) --- */
+.card, .product-card { 
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 15px; 
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .mobile-menu-btn { display: block; }
-    .sidebar { left: -100%; }
-    .sidebar.open { left: 0; }
-    .main-content { margin-left: 0; width: 100%; padding-top: 80px; }
+.product-card:hover {
+    transform: translateY(-5px);
 }
-/* --- AJUSTES DE MERCHANDISING --- */
+
+/* --- GRID DE MERCHANDISING --- */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -131,34 +118,19 @@ body {
     margin-top: 20px;
 }
 
-.product-card {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    overflow: hidden; /* Esto corta lo que se salga de la tarjeta */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-/* AQUÍ ESTÁ EL TRUCO PARA LA IMAGEN */
+/* --- AJUSTE DEFINITIVO PARA LA IMAGEN DEL PRODUCTO --- */
 .product-card img {
-    width: 100%;        /* Ocupa el ancho de la tarjeta */
-    height: 250px;      /* Altura fija para que todas sean iguales */
-    object-fit: contain; /* Ajusta la imagen sin deformarla y sin que se salga */
-    background: white;   /* Fondo blanco por si la imagen es transparente */
-    padding: 15px;      /* Margen interno para que la camiseta no pegue a los bordes */
+    width: 100%;
+    height: 250px;       /* Altura fija para que todas las tarjetas midan lo mismo */
+    object-fit: contain; /* Esto evita que la camiseta se estire o se corte */
+    background: white;   /* Fondo blanco detrás de la imagen */
+    display: block;
+    padding: 20px;       /* Espacio para que la imagen no toque los bordes */
 }
 
 .product-info {
     padding: 20px;
-    text-align: center;
-    width: 100%;
+    background: white;
 }
 
 .product-info h3 {
@@ -170,4 +142,32 @@ body {
 .product-info p {
     font-size: 0.9rem;
     color: #666;
+}
+
+/* --- RESPONSIVE MÓVIL --- */
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1100;
+    background: var(--granate);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--amarillo-rayo);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+    .sidebar { left: -100%; }
+    .sidebar.open { left: 0; }
+    .main-content { 
+        margin-left: 0; 
+        width: 100%; 
+        padding: 20px;
+        padding-top: 80px; 
+    }
+    .welcome-banner { padding: 40px 20px; }
 }
