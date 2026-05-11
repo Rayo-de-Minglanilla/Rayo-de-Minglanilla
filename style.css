@@ -7,22 +7,37 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; display: flex; background: #f0f2f5; overflow-x: hidden; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; color: #333; }
 
-/* BARRA LATERAL */
+/* MENÚ MÓVIL */
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: var(--granate);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
     background: var(--azul-oscuro);
     color: white;
     position: fixed;
+    z-index: 999;
+    transition: 0.3s;
     border-right: 4px solid var(--amarillo-rayo);
 }
 
-.sidebar-header { padding: 30px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.sidebar-logo { width: 90px; margin-bottom: 10px; }
-
-.sidebar-menu ul { list-style: none; margin-top: 20px; }
+.sidebar-header { padding: 30px 20px; text-align: center; }
+.sidebar-logo { width: 80px; margin-bottom: 10px; }
 .sidebar-menu a {
     display: block;
     padding: 15px 25px;
@@ -30,7 +45,7 @@ body { font-family: 'Segoe UI', sans-serif; display: flex; background: #f0f2f5; 
     text-decoration: none;
     transition: 0.3s;
 }
-.sidebar-menu a:hover, .sidebar-menu a.active {
+.sidebar-menu a.active, .sidebar-menu a:hover {
     background: var(--granate);
     border-left: 5px solid var(--amarillo-rayo);
 }
@@ -39,33 +54,47 @@ body { font-family: 'Segoe UI', sans-serif; display: flex; background: #f0f2f5; 
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
-    padding: 40px;
+    padding: 30px;
 }
 
-.content-section { display: none; animation: fadeIn 0.4s ease; }
+.content-section { display: none; animation: fadeIn 0.4s; }
 .content-section.active { display: block; }
-
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ELEMENTOS VISUALES */
 .welcome-banner {
     background: linear-gradient(135deg, var(--azul-oscuro), var(--granate));
     color: white;
-    padding: 50px;
-    border-radius: 20px;
-    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-.grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-.score { font-size: 2rem; font-weight: bold; color: var(--granate); margin-top: 10px; }
+.section-title { margin-bottom: 20px; border-left: 5px solid var(--amarillo-rayo); padding-left: 15px; }
 
-/* TIENDA */
+/* PRODUCTOS MERCH */
 .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-.product-card { background: white; border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 15px; }
-.product-card img { width: 100%; height: 180px; object-fit: contain; background: #f9f9f9; }
-.btn-link { display: inline-block; background: var(--azul-oscuro); color: white; padding: 8px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding-bottom: 20px;
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #f9f9f9;
+    padding: 15px;
+}
+.product-info h3 { font-size: 1.1rem; color: var(--azul-oscuro); margin: 10px 0 5px; }
+.product-info p { font-size: 0.9rem; color: #666; }
 
-/* PRÓXIMAMENTE */
-.coming-soon-card { background: white; padding: 60px; text-align: center; border-radius: 20px; border: 3px dashed #ccc; }
-.loading-bar { width: 80px; height: 4px; background: var(--amarillo-rayo); margin: 20px auto; }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+    .sidebar { left: -100%; }
+    .sidebar.open { left: 0; }
+    .main-content { margin-left: 0; width: 100%; padding-top: 80px; }
+}

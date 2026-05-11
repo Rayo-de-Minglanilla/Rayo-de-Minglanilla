@@ -9,7 +9,11 @@
 </head>
 <body>
 
-    <aside class="sidebar">
+    <button class="mobile-menu-btn" id="mobile-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <img src="escudo.png" alt="Escudo Rayo" class="sidebar-logo">
             <h3>Rayo de Minglanilla</h3>
@@ -19,14 +23,13 @@
                 <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="#plantilla"><i class="fas fa-users"></i> Plantilla</a></li>
                 <li><a href="#partidos"><i class="fas fa-calendar-alt"></i> Partidos</a></li>
-                <li><a href="#tienda"><i class="fas fa-shopping-cart"></i> Tienda</a></li>
+                <li><a href="#merchandising"><i class="fas fa-shopping-bag"></i> Merchandising</a></li>
                 <li><a href="#estadio"><i class="fas fa-map-marker-alt"></i> Estadio</a></li>
             </ul>
         </nav>
     </aside>
 
     <main class="main-content">
-        
         <section id="inicio" class="content-section active">
             <div class="welcome-banner">
                 <h1>Bienvenidos al Rayo</h1>
@@ -35,11 +38,11 @@
             <div class="grid-info">
                 <div class="card">
                     <h3>Último Resultado</h3>
-                    <div class="score">Rayo de Minglanillay 2(3) - 2(0) La Pesquera F.C</div>
+                    <div class="score">Rayo 2 - 0 Rival</div>
                 </div>
                 <div class="card">
                     <h3>Próximo Encuentro</h3>
-                    <p>...</p>
+                    <p>Domingo 12:00h en casa</p>
                 </div>
             </div>
         </section>
@@ -56,52 +59,45 @@
 
         <section id="partidos" class="content-section">
             <div class="section-title"><h2>Calendario</h2></div>
-            <div class="match-card upcoming">
-                <div class="match-teams">
-                    <span>Rayo de Minglanilla</span>
-                    <span class="vs">VS</span>
-                    <span>Rival FC</span>
-                </div>
+            <div class="match-card">
+                <p><strong>Rayo de Minglanilla vs Rival FC</strong></p>
                 <p>Fuente del Recreo | Domingo 11:30h</p>
             </div>
         </section>
 
-        <section id="tienda" class="content-section">
-            <div class="section-title"><h2>Tienda Oficial</h2></div>
+        <section id="merchandising" class="content-section">
+            <div class="section-title"><h2>Merchandising</h2></div>
             <div class="product-grid">
                 <div class="product-card">
                     <img src="camisetalocal.png" alt="Camiseta">
                     <div class="product-info">
-                        <h3>Camiseta Local</h3>
-                        <a href="#" class="btn-link">Comprar</a>
+                        <h3>Camiseta Oficial</h3>
+                        <p>Primera Equipación</p>
                     </div>
                 </div>
                 <div class="product-card">
-            <img src="equipacioncompleta.png" alt="Equipación Completa">
-            <div class="product-info">
-                <h3>Pack Equipación</h3>
-                <p>Camiseta, pantalón y medias oficiales.</p>
-                <a href="#" target="_blank" class="btn-link">Comprar<i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
+                    <img src="equipacioncompleta.png" alt="Equipación">
+                    <div class="product-info">
+                        <h3>Pack Completo</h3>
+                        <p>Camiseta, pantalón y medias</p>
+                    </div>
+                </div>
                 <div class="product-card">
                     <img src="bandera.png" alt="Bandera">
                     <div class="product-info">
                         <h3>Bandera Oficial</h3>
-                        <a href="#" class="btn-link">Comprar</a>
+                        <p>150cm x 90cm</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="estadio" class="content-section">
-            <div class="section-title"><h2>Fuente del Recreo</h2></div>
+            <div class="section-title"><h2>Estadio</h2></div>
             <div class="card">
-                <p>📍 Minglanilla, Cuenca</p>
-                <p>Nuestra fortaleza oficial.</p>
+                <p>📍 Fuente del Recreo, Minglanilla</p>
             </div>
         </section>
-
     </main>
 
     <script src="script.js"></script>
