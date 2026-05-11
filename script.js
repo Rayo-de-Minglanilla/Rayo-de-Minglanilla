@@ -35,7 +35,7 @@ const baseCronicas = {
             <p class="intro" style="font-size:1.1rem; font-weight:500; margin-bottom:15px;">Se respiraba aroma de las grandes citas en la <strong>Fuente del Recreo</strong>. Las gradas, abarrotadas por una afición volcada, presentaban un aspecto espectacular para recibir un derbi que prometía chispas desde el pitido inicial.</p>
             
             <div style="text-align:center; margin:20px 0; background:#f9f9f9; padding:10px; border-radius:10px;">
-                <img src="foto-partido1.jpg" style="max-width:100%; border-radius:5px;" alt="11 Titular">
+                <img src="foto-partido1.jpg.jpeg" style="max-width:100%; border-radius:5px;" alt="11 Titular">
                 <p style="font-style:italic; font-size:0.85rem; color:#666; margin-top:5px;">11 titulares del Rayo de Minglanilla</p>
             </div>
 
