@@ -27,39 +27,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // BASE DE DATOS COMPLETA
 const baseCronicas = {
-    'derbi-pesquera': {
-        titulo: "Épica Victoria en el Derbi: El Rayo reina en los penaltis",
-        fecha: "Derbi Comarcal - Temporada 2026",
-        imagen: "foto-partido1.jpg.jpeg", // Esta es la foto que sale en la lista
-        texto: `
-            <p class="intro" style="font-size:1.1rem; font-weight:500; margin-bottom:15px;">Se respiraba aroma de las grandes citas en la <strong>Fuente del Recreo</strong>. Las gradas, abarrotadas por una afición volcada, presentaban un aspecto espectacular para recibir un derbi que prometía chispas desde el pitido inicial.</p>
-            
-            <div style="text-align:center; margin:20px 0; background:#f9f9f9; padding:10px; border-radius:10px;">
-                <img src="foto-partido1.jpg.jpeg" style="max-width:100%; border-radius:5px;" alt="11 Titular">
-                <p style="font-style:italic; font-size:0.85rem; color:#666; margin-top:5px;">11 titulares del Rayo de Minglanilla</p>
-            </div>
+   texto: `
+    <p class="intro" style="font-size:1.1rem; font-weight:500; margin-bottom:15px;">Hay partidos que se ganan con fútbol y otros que se ganan con el escudo. El derbi en la <strong>Fuente del Recreo</strong> fue de los segundos. Ante una afición entregada, el Rayo demostró por qué en Minglanilla no se rinde nadie.</p>
+    
+    <div style="text-align:center; margin:20px 0; background:#f9f9f9; padding:10px; border-radius:10px;">
+        <img src="foto-partido1.jpg" style="max-width:100%; border-radius:5px;" alt="11 Titular">
+        <p style="font-style:italic; font-size:0.85rem; color:#666; margin-top:5px;">Los 11 guerreros que defendieron el orgullo local.</p>
+    </div>
 
-            <p>El encuentro arrancó con respeto entre los dos equipos, aunque con el paso de los minutos las ocasiones llegaron del lado local. Conseguiríamos adelantarnos en el encuentro demostrando nuestra superioridad técnica, aunque La Pesquera supo sobreponerse y, con más fortuna que fútbol, logró darle la vuelta al marcador.</p>
+    <p>El encuentro comenzó con la tensión propia de un derbi, con un Rayo dominador pero que se encontró con un jarro de agua fría tras el descanso. En una acción aislada, el árbitro señaló un penalti a favor de La Pesquera con el que lograron adelantarse. Pero si algo tiene este equipo es fe; el Rayo no tardó en reaccionar y, tras un asedio constante, logramos el empate que hacía justicia a lo visto en el campo.</p>
 
-            <p>En los últimos minutos, con un Rayo volcado totalmente al ataque y alentado por una afición heroica, conseguiríamos el premiado gol tras un claro penalti, igualando así el partido. Aunque lo seguiríamos intentando hasta el suspiro final, no pudimos perforar la portería rival de nuevo de forma injusta.</p>
+    <p>Cuando parecía que el partido estaba controlado, la crueldad del fútbol apareció en los minutos finales: La Pesquera se ponía 1-2 en el marcador. Con el tiempo casi cumplido y el rival ya celebrando una victoria que no merecía, el Rayo sacó el orgullo de Minglanilla. En un ataque desesperado, forzamos un penalti clarísimo que convertimos para poner el 2-2 definitivo, desatando la locura en las gradas.</p>
 
-            <h3 style="color:#7a1b2e; margin:20px 0 10px;">La batalla final: Los Penaltis</h3>
-            <p>Así llegaríamos a los penaltis. Los nervios y la emoción se apoderaron de las gradas de la Fuente del Recreo. Pero nuestros jugadores solventaron la presión con una maestría absoluta, logrando un <strong>contundente 3-0</strong>.</p>
-            
-            <p>Cabe destacar el riguroso gol de penalti que el "árbitro" consideró que no entró, una decisión incomprensible que solo sirvió para hacer más épica nuestra victoria. ¡La justicia futbolística terminó dándole el triunfo al equipo que más lo buscó!</p>
-            
-            <div style="margin:25px 0; text-align:center; background:#000; padding:15px; border-radius:10px;">
-                <video controls width="100%" style="border-radius:5px;">
-                    <source src="video-partido.mp4" type="video/mp4">
-                    Tu navegador no soporta vídeos.
-                </video>
-                <p style="color:#fff; font-size:0.9rem; margin-top:10px; font-weight:bold;">"Seguimos buscando el balón"</p>
-            </div>
+    <h3 style="color:#7a1b2e; margin:20px 0 10px;">Justicia Divina en los Penaltis</h3>
+    <p>Llegamos a la tanda con la moral por las nubes y el rival hundido. El resultado fue un <strong>contundente 3-0</strong> que deja claro quién manda. Ni siquiera el "error" arbitral al anularnos un penalti que entró claramente pudo empañar la fiesta. Los penaltis de La Pesquera todavía están aterrizando en los campos vecinos.</p>
+    
+    <div style="margin:25px 0; text-align:center; background:#000; padding:15px; border-radius:10px;">
+        <video controls width="100%" style="border-radius:5px;">
+            <source src="video-partido.mp4" type="video/mp4">
+            Tu navegador no soporta vídeos.
+        </video>
+        <p style="color:#fff; font-size:0.9rem; margin-top:10px; font-weight:bold;">"Seguimos buscando el balón" - El 3-0 definitivo.</p>
+    </div>
 
-            <p style="font-weight:bold; border-left:4px solid #f1c40f; padding-left:15px; margin-top:20px;">Victoria incontestable. El derbi se queda en casa y Minglanilla celebra la casta de su equipo. ¡Aúpa Rayo!</p>
-        `
+    <p style="font-weight:bold; border-left:4px solid #f1c40f; padding-left:15px; margin-top:20px;">Remontada, épica y lección de fútbol. Que tomen nota: en la Fuente del Recreo manda el Rayo. ¡Aúpa Minglanilla!</p>
+`
     }
-};
+
 
 function abrirCronica(id) {
     const partido = baseCronicas[id];
