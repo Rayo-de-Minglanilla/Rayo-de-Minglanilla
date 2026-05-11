@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayo de Minglanilla | Dashboard</title>
+    <title>Rayo de Minglanilla | Web Oficial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-header">
-            <img src="escudo.png" alt="Escudo" class="sidebar-logo">
+            <img src="escudo.png" alt="Escudo Rayo" class="sidebar-logo">
             <h3>Rayo de Minglanilla</h3>
         </div>
         <nav class="sidebar-menu">
@@ -27,69 +27,75 @@
 
     <main class="main-content">
         
-        <section id="inicio" class="content-section">
+        <section id="inicio" class="content-section active">
             <div class="welcome-banner">
                 <h1>Bienvenidos al Rayo</h1>
                 <p>Sede Oficial: Fuente del Recreo</p>
             </div>
-            
             <div class="grid-info">
                 <div class="card">
                     <h3>Último Resultado</h3>
                     <div class="score">Rayo 2 - 0 Rival</div>
                 </div>
                 <div class="card">
-                    <h3>Próximo Partido</h3>
-                    <p>Domingo 12:00h</p>
-                    <p>En Fuente del Recreo</p>
+                    <h3>Próximo Encuentro</h3>
+                    <p>Domingo 12:00h en casa</p>
                 </div>
             </div>
         </section>
-        <section id="tienda" class="content-section" style="margin-top: 50px;">
-    <div class="section-title">
-        <h2>Tienda Oficial</h2>
-        <p>Viste los colores del Rayo de Minglanilla</p>
-    </div>
 
-    <section id="tienda" class="content-section">
-    <div class="section-title">
-        <h2>Tienda Oficial</h2>
-        <p>Viste los colores del Rayo de Minglanilla</p>
-    </div>
-
-    <div class="product-grid">
-        <div class="product-card">
-            <div class="product-badge">Oficial</div>
-            <img src="camisetalocal.png" alt="Camiseta Local">
-            <div class="product-info">
-                <h3>Camiseta Local</h3>
-                <p>La piel del Rayo para la temporada 2026.</p>
-                <a href="https://zentralsports.com/producto/rayo-de-minglanilla/" target="_blank" class="btn-link">Comprar en tienda externa <i class="fas fa-external-link-alt"></i></a>
+        <section id="plantilla" class="content-section">
+            <div class="section-title"><h2>Nuestra Plantilla</h2></div>
+            <div class="coming-soon-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>Próximamente</h3>
+                <p>Cargando fichas de jugadores 2026...</p>
+                <div class="loading-bar"></div>
             </div>
-        </div>
+        </section>
 
-        <div class="product-card">
-            <img src="equipacioncompleta.png" alt="Equipación Completa">
-            <div class="product-info">
-                <h3>Pack Equipación</h3>
-                <p>Camiseta, pantalón y medias oficiales.</p>
-                <a href="https://zentralsports.com/producto/rayo-de-minglanilla/" target="_blank" class="btn-link">Comprar en tienda externa <i class="fas fa-external-link-alt"></i></a>
+        <section id="partidos" class="content-section">
+            <div class="section-title"><h2>Calendario</h2></div>
+            <div class="match-card upcoming">
+                <div class="match-teams">
+                    <span>Rayo de Minglanilla</span>
+                    <span class="vs">VS</span>
+                    <span>Rival FC</span>
+                </div>
+                <p>Fuente del Recreo | Domingo 11:30h</p>
             </div>
-        </div>
+        </section>
 
-        <div class="product-card">
-            <img src="bandera.png" alt="Bandera">
-            <div class="product-info">
-                <h3>Bandera del Rayo</h3>
-                <p>Lleva tus colores a la Fuente del Recreo.</p>
-                <a href="https://zentralsports.com/producto/rayo-de-minglanilla/" target="_blank" class="btn-link">Comprar en tienda externa <i class="fas fa-external-link-alt"></i></a>
+        <section id="tienda" class="content-section">
+            <div class="section-title"><h2>Tienda Oficial</h2></div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="camisetalocal.png" alt="Camiseta">
+                    <div class="product-info">
+                        <h3>Camiseta Local</h3>
+                        <a href="#" class="btn-link">Comprar</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="bandera.png" alt="Bandera">
+                    <div class="product-info">
+                        <h3>Bandera Oficial</h3>
+                        <a href="#" class="btn-link">Comprar</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-</section>
+        </section>
 
-        </main>
+        <section id="estadio" class="content-section">
+            <div class="section-title"><h2>Fuente del Recreo</h2></div>
+            <div class="card">
+                <p>📍 Minglanilla, Cuenca</p>
+                <p>Nuestra fortaleza oficial.</p>
+            </div>
+        </section>
 
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
