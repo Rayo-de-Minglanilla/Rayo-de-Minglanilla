@@ -171,50 +171,44 @@ body {
     }
     .welcome-banner { padding: 40px 20px; }
 }
-/* --- SECCIÓN PATROCINADORES --- */
+/* --- DOMANDO LOS LOGOS DE SPONSORS --- */
 .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     width: 100%;
-    margin-top: 20px;
 }
 
 .sponsor-card {
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.sponsor-card img {
-    max-width: 120px;
-    height: auto;
-    filter: grayscale(100%); /* Efecto blanco y negro */
-    opacity: 0.7;
-    transition: 0.3s;
+/* La caja que limita el tamaño */
+.sponsor-img-box {
+    width: 100%;
+    height: 120px; /* Altura máxima del logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     margin-bottom: 10px;
 }
 
-.sponsor-card:hover {
-    transform: scale(1.05);
-    background: white;
-}
-
-.sponsor-card:hover img {
-    filter: grayscale(0%); /* Vuelve el color al pasar el ratón */
-    opacity: 1;
+/* El logo propiamente dicho */
+.img-logo {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
 }
 
 .sponsor-card p {
     font-size: 0.8rem;
     font-weight: bold;
-    color: var(--azul-oscuro);
-    text-transform: uppercase;
+    color: var(--granate);
 }
