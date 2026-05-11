@@ -139,23 +139,27 @@
             </div>
         </section>
 
+       <section id="resumenes" class="content-section">
+    <div class="section-title"><h2>Crónicas de Partidos</h2></div>
+
+    <div id="lista-cronicas" class="cronicas-grid">
         <div class="cronica-card" onclick="abrirCronica('derbi-pesquera')">
-    <div class="cronica-img-box">
-        <img src="foto-partido1.jpg.jpeg" alt="Victoria Derbi" class="img-fixed">
-    </div>
-    <div class="cronica-info">
-        <h4>¡El Derbi es Nuestro!</h4>
-        <p>El Rayo tumba a La Pesquera en una tarde histórica en la Fuente del Recreo...</p>
-        <small>Leer crónica completa →</small>
-    </div>
-</div>
-
-        </div>
-
-    <div id="detalle-cronica" class="detalle-box" style="display: none;">
-        <button onclick="volverALista()" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver atrás</button>
-        <div id="contenido-cronica">
+            <div class="cronica-img-box">
+                <img src="foto-partido1.jpg" alt="Victoria Derbi" class="img-fixed">
             </div>
+            <div class="cronica-info">
+                <h4>¡El Derbi es Nuestro!</h4>
+                <p>El Rayo tumba a La Pesquera en una tarde histórica...</p>
+                <small>Leer crónica completa →</small>
+            </div>
+        </div>
+    </div>
+
+    <div id="detalle-cronica" style="display: none; background: white; padding: 20px; border-radius: 15px; color: #333;">
+        <button onclick="volverALista()" style="background:#0a2144; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; margin-bottom:15px;">
+            ← Volver a la lista
+        </button>
+        <div id="contenido-cronica"></div>
     </div>
 </section>
     </main>
