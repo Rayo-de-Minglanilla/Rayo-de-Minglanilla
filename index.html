@@ -82,7 +82,6 @@
             <div class="section-title">
                 <h2>Merchandising</h2>
             </div>
-
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-img-container">
@@ -93,7 +92,6 @@
                         <p>Primera Equipación</p>
                     </div>
                 </div>
-
                 <div class="product-card">
                     <div class="product-img-container">
                         <img src="equipacioncompleta.png" alt="Pack" class="img-merch">
@@ -119,134 +117,84 @@
             <div class="section-title">
                 <h2>Nuestros Patrocinadores</h2>
             </div>
-
             <div class="sponsors-grid">
                 <div class="sponsor-card">
-                    <div class="sponsor-img-box">
-                        <img src="sponsor1.png" alt="Sponsor" class="img-logo">
-                    </div>
+                    <div class="sponsor-img-box"><img src="sponsor1.png" alt="Sponsor" class="img-logo"></div>
                     <p>CACHI PUB</p>
                 </div>
-
                 <div class="sponsor-card">
-                    <div class="sponsor-img-box">
-                        <img src="sponsor2.png" alt="Sponsor" class="img-logo">
-                    </div>
+                    <div class="sponsor-img-box"><img src="sponsor2.png" alt="Sponsor" class="img-logo"></div>
                     <p>TIBURONES DEL PERREO</p>
                 </div>
                 <div class="sponsor-card">
-                    <div class="sponsor-img-box">
-                        <img src="sponsor3.png" alt="Sponsor" class="img-logo">
-                    </div>
+                    <div class="sponsor-img-box"><img src="sponsor3.png" alt="Sponsor" class="img-logo"></div>
                     <p>ADRIAN GARCIA DJ</p>
                 </div>
             </div>
         </section>
 
-       <section id="resumenes" class="content-section">
-    <div class="section-title"><h2>Crónicas de Partidos</h2></div>
-
-    <div id="lista-cronicas" class="cronicas-grid">
-        <div class="cronica-card" onclick="abrirCronica('derbi-pesquera')">
-            <div class="cronica-img-box">
-                <img src="portada.jpeg" alt="Victoria Derbi" class="img-fixed">
+        <section id="resumenes" class="content-section">
+            <div class="section-title"><h2>Crónicas de Partidos</h2></div>
+            <div id="lista-cronicas" class="cronicas-grid">
+                <div class="cronica-card" onclick="abrirCronica('derbi-pesquera')">
+                    <div class="cronica-img-box">
+                        <img src="portada.jpeg" alt="Victoria Derbi" class="img-fixed">
+                    </div>
+                    <div class="cronica-info">
+                        <h4>¡El Derbi es Nuestro!</h4>
+                        <p>El Rayo tumba a La Pesquera en una tarde histórica...</p>
+                        <small>Leer crónica completa →</small>
+                    </div>
+                </div>
             </div>
-            <div class="cronica-info">
-                <h4>¡El Derbi es Nuestro!</h4>
-                <p>El Rayo tumba a La Pesquera en una tarde histórica...</p>
-                <small>Leer crónica completa →</small>
+            <div id="detalle-cronica" style="display: none; background: white; padding: 20px; border-radius: 15px; color: #333;">
+                <button onclick="volverALista()" style="background:#0a2144; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; margin-bottom:15px;">
+                    ← Volver a la lista
+                </button>
+                <div id="contenido-cronica"></div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div id="detalle-cronica" style="display: none; background: white; padding: 20px; border-radius: 15px; color: #333;">
-        <button onclick="volverALista()" style="background:#0a2144; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; margin-bottom:15px;">
-            ← Volver a la lista
-        </button>
-        <div id="contenido-cronica"></div>
-    </div>
-
-    <section id="diccionario" class="content-section">
-    <div class="section-title">
-        <h2>Diccionario de la Superioridad</h2>
-    </div>
-    
-    <div style="background: white; padding: 30px; border-radius: 20px; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 5px solid #7a1b2e; max-width: 800px; margin: 0 auto;">
-        <div style="display: flex; flex-direction: column; gap: 18px;">
-            <p><strong>1. Pesquerazo:</strong> Celebrar el 1-2 en el minuto 85 para acabar hundido tras el 3-0 en penaltis. Dícese de la mayor cura de humildad de la temporada.</p>
-            <p><strong>2. Pinos:</strong> Lugar donde los jugadores de La Pesquera mandan los balones en los penaltis. Se recomienda ir con casco a recoger setas.</p>
-            <p><strong>3. Justicia:</strong> Ganar un derbi incluso cuando el árbitro ignora un gol que entró un metro.</p>
-            <p><strong>4. "El Muro":</strong> Sensación de pánico del rival al entrar en nuestro área y saber que hoy no huele el balón.</p>
-            <p><strong>5. Escozor:</strong> Sensación térmica en el pueblo vecino al ver nuestro contador de paternidad.</p>
-            <p><strong>6. Turista Deportivo:</strong> Jugador rival que viene al Recreo a por una victoria y se va con tres goles en la mochila.</p>
-            <p><strong>7. Mudez:</strong> Fenómeno en la grada visitante tras el tercer penalti fallado.</p>
-            <p><strong>8. ADN Rayo:</strong> Capacidad de remontar mientras el rival ya está pensando en el Instagram.</p>
-            <p><strong>9. Ilusionismo:</strong> Creer que por ir ganando en el 89 vas a salir vivo de Minglanilla. Sale mal.</p>
-            <p><strong>10. Retrovisor:</strong> El único sitio donde nos ven en la clasificación.</p>
-        </div>
-        <div style="margin-top: 30px; padding: 15px; background: #fdf2f2; border-radius: 10px; border: 1px dashed #7a1b2e; font-size: 0.9rem; font-style: italic; text-align: center;">
-                “Nota: Si alguna palabra te ofende, puedes presentar una queja formal en nuestra oficina de objetos perdidos... está justo al lado de donde guardamos los balones que tirasteis a los pinos.”
+        <section id="diccionario" class="content-section">
+            <div class="section-title">
+                <h2>Diccionario de la Superioridad</h2>
             </div>
-    </div>
-</section>
-
-<section id="rumores" class="content-section">
-    <div class="section-title">
-        <h2>Mercado de Fichajes: Última Hora</h2>
-    </div>
-
-    <div class="rumores-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
-        
-        <div class="rumor-card" style="background: #1a1a1a; color: white; padding: 25px; border-radius: 20px; border: 2px solid #e74c3c; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <span style="background: #e74c3c; padding: 4px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem;">NEGOCIACIONES ROTAS</span>
-                <i class="fas fa-times-circle" style="color: #e74c3c; font-size: 1.5rem;"></i>
+            <div style="background: white; padding: 30px; border-radius: 20px; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 5px solid #7a1b2e; max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; flex-direction: column; gap: 18px;">
+                    <p><strong>1. Pesquerazo:</strong> Celebrar el 1-2 en el minuto 85 para acabar hundido tras el 3-0 en penaltis.</p>
+                    <p><strong>2. Pinos:</strong> Lugar donde los jugadores de La Pesquera mandan los balones en los penaltis.</p>
+                    <p><strong>3. Justicia:</strong> Ganar un derbi incluso cuando el árbitro ignora un gol que entró un metro.</p>
+                    <p><strong>4. "El Muro":</strong> Sensación de pánico del rival al entrar en nuestro área.</p>
+                    <p><strong>5. Escozor:</strong> Sensación térmica en el pueblo vecino al ver nuestra web.</p>
+                    <p><strong>6. Turista Deportivo:</strong> Jugador rival que se va con tres goles en la mochila.</p>
+                    <p><strong>7. Mudez:</strong> Fenómeno en la grada visitante tras el tercer penalti fallado.</p>
+                    <p><strong>8. ADN Rayo:</strong> Capacidad de remontar mientras el rival ya piensa en Instagram.</p>
+                    <p><strong>9. Ilusionismo:</strong> Creer que vas a salir vivo de Minglanilla ganando en el 89.</p>
+                    <p><strong>10. Retrovisor:</strong> El único sitio donde nos ven en la clasificación.</p>
+                </div>
+                <div style="margin-top: 30px; padding: 15px; background: #fdf2f2; border-radius: 10px; border: 1px dashed #7a1b2e; font-size: 0.9rem; font-style: italic; text-align: center;">
+                    “Nota: Quejas en la oficina de objetos perdidos... al lado de los pinos.”
+                </div>
             </div>
-            <h3 style="color: #f1c40f; margin-bottom: 10px;">Kylian Mbappé y Ester Expósito, sin sitio en el Rayo</h3>
-            <p style="line-height: 1.6;">
-                Se confirma que el entorno del jugador francés y la actriz han estado merodeando por la <strong>Fuente del Recreo</strong> buscando casa. Sin embargo, la directiva del Rayo ha sido tajante: <strong>"No hay sitio para Kylian en el equipo actual"</strong>. 
-            </p>
-            <p style="font-size: 0.9rem; margin-top: 10px; color: #ccc; font-style: italic;">
-                "El nivel de nuestra delantera es demasiado alto y no queremos romper la armonía del vestuario con suplentes de lujo", declaró el club. Mbappé tendrá que buscar acomodo en ligas menores como la de La Pesquera.
-            </p>
-        </div>
+        </section>
 
-        <div class="rumor-card" style="background: #ffffff; color: #333; padding: 25px; border-radius: 20px; border-left: 8px solid #f1c40f; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <span style="background: #f1c40f; color: black; padding: 4px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem;">EN NEGOCIACIONES</span>
-                <i class="fas fa-clock" style="color: #f1c40f; font-size: 1.5rem;"></i>
+        <section id="rumores" class="content-section">
+            <div class="section-title">
+                <h2>Mercado de Fichajes: Última Hora</h2>
             </div>
-            <h3 style="color: #7a1b2e; margin-bottom: 10px;">N'Golo Kanté: El pulmón que quiere Minglanilla</h3>
-            <p style="line-height: 1.6;">
-                El centrocampista francés ha sido visto en el bar del pueblo pidiendo una ración de bravas. Las negociaciones están abiertas, pero <strong>nada asegurado</strong>. 
-            </p>
-            <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">
-                Kanté está dispuesto a rebajarse el sueldo un 95% con tal de jugar al lado de los cracks del Rayo, pero todavía tiene que pasar la prueba física más dura: aguantar el ritmo de la afición en la Fuente del Recreo.
-            </p>
-        </div>
-
-        <div style="text-align: center; margin-top: 10px; color: #888; font-size: 0.8rem; font-style: italic;">
-            * Información contrastada con los vecinos más informados del pueblo. Cualquier parecido con la realidad es porque el Rayo es demasiado grande.
-        </div>
-
-    </div>
-</section>
-
-   
-</section>
+            <div class="rumores-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+                <div class="rumor-card" style="background: #1a1a1a; color: white; padding: 25px; border-radius: 20px; border: 2px solid #e74c3c;">
+                    <h3 style="color: #f1c40f;">Mbappé y Ester Expósito, sin sitio en el Rayo</h3>
+                    <p>La directiva es tajante: "No hay sitio para Kylian". Tendrá que buscar equipo en ligas menores como La Pesquera.</p>
+                </div>
+                <div class="rumor-card" style="background: #ffffff; color: #333; padding: 25px; border-radius: 20px; border-left: 8px solid #f1c40f;">
+                    <h3 style="color: #7a1b2e;">N'Golo Kanté: En negociaciones</h3>
+                    <p>Visto en el bar pidiendo bravas. Está dispuesto a rebajarse el sueldo un 95% por jugar aquí.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
 </body>
-
-</html>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<script src="script.js"></script>
-</body>
-
 </html>
