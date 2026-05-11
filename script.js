@@ -84,3 +84,26 @@ function volverALista() {
     document.getElementById('lista-cronicas').style.display = 'grid';
     document.getElementById('detalle-cronica').style.display = 'none';
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // FECHA EXACTA: 10 de agosto de 2025, 19:00:00
+    // Nota: En JS, los meses van de 0 a 11 (Agosto es el mes 7)
+    const fechaPaternidad = new Date(2025, 7, 10, 19, 0, 0); 
+    
+    function actualizarContador() {
+        const ahora = new Date();
+        const diferencia = ahora - fechaPaternidad;
+        
+        // Calculamos días, horas y minutos para que sea más humillante
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        
+        const elemento = document.getElementById('contador-dias');
+        if(elemento) {
+            elemento.innerText = dias;
+        }
+    }
+
+    // Ejecutar al cargar
+    actualizarContador();
+    
+    // El resto de tu código de navegación (links.forEach...) sigue aquí abajo
+});

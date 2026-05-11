@@ -260,3 +260,47 @@ body {
 .pie-foto, .pie-video { font-style: italic; font-size: 0.85rem; color: #666; margin-top: 8px; }
 .texto-completo h3 { color: var(--granate); margin: 25px 0 10px 0; }
 .conclusion { font-weight: bold; border-left: 4px solid var(--amarillo-rayo); padding-left: 15px; margin-top: 30px; }
+
+
+/* --- ESTILO DEL CONTADOR DE PATERNIDAD --- */
+.paternidad-box {
+    background: linear-gradient(145deg, #0a2144, #7a1b2e);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px solid var(--amarillo-rayo);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin: 20px 0;
+    max-width: 500px;
+}
+
+.paternidad-header {
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--amarillo-rayo);
+    margin-bottom: 10px;
+}
+
+#contador-dias {
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 10px 0;
+    text-shadow: 3px 3px 0px #000;
+}
+
+.paternidad-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.paternidad-footer {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    background: rgba(0,0,0,0.3);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
