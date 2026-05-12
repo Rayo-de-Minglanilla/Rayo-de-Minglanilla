@@ -140,13 +140,3 @@ function volverALista() {
 }
 
 // 6. FUNCIÓN PARA LA PORRA (EXTRA)
-function enviarPorra() {
-    const gRayo = document.querySelector('input[name="goles_rayo"]').value;
-    const gRival = document.querySelector('input[name="goles_rival"]').value;
-    
-    if(gRayo === "" || gRival === "") {
-        alert("Pon un resultado, ¡no seas de La Pesquera!");
-    } else {
-        alert(`Porra enviada: Rayo ${gRayo} - ${gRival} Rival. ¡El escozor está servido!`);
-    }
-}
