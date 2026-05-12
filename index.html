@@ -249,25 +249,35 @@
             </div>
             <div
                 style="background: linear-gradient(145deg, #0a2144, #7a1b2e); padding: 30px; border-radius: 20px; color: white; text-align: center; border: 2px solid #f1c40f;">
-                <p style="margin-bottom: 20px; font-weight: bold;">Rayo de Minglanilla vs La Pesquera</p>
-
-                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
-                    <div style="flex: 1;">
-                        <img src="escudo.png" style="width: 50px; margin-bottom: 10px;">
-                        <input type="number" name="goles_rayo" placeholder="0"
-                            style="width: 70px; text-align: center; font-size: 2rem; background: white; color: #333; border: 3px solid #f1c40f; border-radius: 10px;">
+                <form action="https://script.google.com/macros/library/d/1DvbesuoIhKu_z15zsTTy4K-Y6nRe0gU4ky-DB5fbgXwv9TUxAZfc4INI/1" method="POST">
+                    <p style="margin-bottom: 15px; font-weight: bold;">Rayo de Minglanilla vs La Pesquera</p>
+        
+                    <input type="text" name="nombre" placeholder="Tu nombre" required
+                        style="width: 80%; padding: 10px; margin-bottom: 20px; border-radius: 8px; border: none; text-align: center;">
+        
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                        <div style="flex: 1;">
+                            <img src="escudo.png" style="width: 50px; margin-bottom: 10px;">
+                            <input type="number" name="goles_rayo" placeholder="0" required
+                                style="width: 70px; text-align: center; font-size: 2rem; border-radius: 10px; border: 3px solid #f1c40f;">
+                        </div>
+                        <div style="font-size: 2rem; font-weight: bold;">-</div>
+                        <div style="flex: 1;">
+                            <div
+                                style="width: 50px; height: 50px; background: #eee; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold;">
+                                Rival</div>
+                            <input type="number" name="goles_rival" placeholder="0" required
+                                style="width: 70px; text-align: center; font-size: 2rem; border-radius: 10px; border: none;">
+                        </div>
                     </div>
-
-                    <div style="font-size: 2rem; font-weight: bold;">-</div>
-
-                    <div style="flex: 1;">
-                        <div
-                            style="width: 50px; height: 50px; background: #eee; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold;">
-                            Rival</div>
-                        <input type="number" name="goles_rival" placeholder="0"
-                            style="width: 70px; text-align: center; font-size: 2rem; background: white; color: #333; border: none; border-radius: 10px;">
-                    </div>
-                </div>
+        
+                    <button type="submit"
+                        style="background: #f1c40f; color: #0a2144; padding: 12px 25px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer;">
+                        ENVIAR MI APUESTA
+                    </button>
+                </form>
+            </div>
+        </section>
 
                 <button onclick="alert('¡Porra enviada! Veremos si aciertas.')"
                     style="background: #f1c40f; color: #0a2144; padding: 12px 25px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer;">
