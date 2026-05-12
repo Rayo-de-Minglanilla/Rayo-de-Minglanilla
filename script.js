@@ -110,38 +110,31 @@ const baseCronicas = {
 };
 
 // --- MOTOR DE LA WEB (Ponlo arriba del todo) ---
-function showSection(sectionId) {
-    console.log("Cambiando a la sección:", sectionId);
-    const sections = document.querySelectorAll('.content-section');
-    sections.forEach(s => s.style.display = 'none');
-
-    const activeSection = document.getElementById(sectionId);
-    if (activeSection) {
-        activeSection.style.display = 'block';
-    } else {
-        console.error("No existe la sección con id:", sectionId);
-    }
-}
-
-// --- BASE DE DATOS DE NOTICIAS ---
-const baseNoticias = {
-    "exclusiva-jorge-perez": {
+// 1. Los datos (Asegúrate de que las IDs coincidan con las de arriba)
+const noticiasDatos = {
+    "jorge-perez": {
         titulo: "🚨 EXCLUSIVA: Jorge y Pérez",
-        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:15px;'><p>Pillados con un outfit rompedor. El club apoya que se sientan divinas.</p>"
+        texto: `<div style="text-align:center;"><img src="jorge.jpeg" style="width:100%; border-radius:15px; margin-bottom:15px;"></div>
+                <p>Nuestros defensas han sido pillados con vestidazos de seda y un maquillaje impecable. El club ha declarado: <b>"Si quieren defender con tacones, les pondremos césped de seda"</b>.</p>`
     },
-    "carlos-noche-loca": {
+    "carlos-cocoa": {
         titulo: "🍷 Carlos: El Rey de la Cocoa",
-        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:15px;'><p>Carlos se subió al podio de la Cocoa gritando Aupa Rayo y metiéndose con el patatal de La Pesquera. ¡Toda la disco le seguía!</p>"
+        texto: `<div style="text-align:center;"><img src="carlos.jpeg" style="width:100%; border-radius:15px; margin-bottom:15px;"></div>
+                <p>Carlos se subió al podio de la discoteca Cocoa gritando <b>"¡AUPA RAYO!"</b> y <b>"¡EL CAMPO DE LA PESQUERA ES UN PATATAL!"</b>. Toda la discoteca le siguió en los cánticos. El Míster pide que para la próxima invite a una ronda.</p>`
     }
 };
 
-// --- FUNCIÓN PARA ABRIR NOTICIAS ---
+// 2. La función (Copia exacta de cómo abres las crónicas)
 function abrirNoticia(id) {
-    const noticia = baseNoticias[id];
-    if (noticia) {
-        document.getElementById('titulo-cronica').innerHTML = noticia.titulo;
-        document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
+    const data = noticiasDatos[id];
+    if (data) {
+        // Usamos los mismos IDs que usas en las crónicas
+        document.getElementById('titulo-cronica').innerHTML = data.titulo;
+        document.getElementById('cuerpo-cronica').innerHTML = data.texto;
+        
+        // Usamos la misma función que usas para mostrar secciones
         showSection('detalle-cronica');
+        window.scrollTo(0, 0);
     }
 }
 

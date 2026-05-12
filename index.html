@@ -25,8 +25,7 @@
                 <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="#plantilla"><i class="fas fa-users"></i> Plantilla</a></li>
                 <li><a href="#partidos"><i class="fas fa-calendar-alt"></i> Partidos</a></li>
-                <li><a href="#noticias" onclick="showSection('noticias')"><i class="fas fa-newspaper"></i> Noticias Rayo</a></li>
-                <li><a href="#merchandising"><i class="fas fa-shopping-bag"></i> Merchandising</a></li>
+                <li><a href="#noticias"><i class="fas fa-newspaper"></i> Noticias Rayo</a></li>                <li><a href="#merchandising"><i class="fas fa-shopping-bag"></i> Merchandising</a></li>
                 <li><a href="#estadio"><i class="fas fa-map-marker-alt"></i> Estadio</a></li>
                 <li><a href="#patrocinadores"><i class="fas fa-handshake"></i> Patrocinadores</a></li>
                 <li><a href="#resumenes"><i class="fas fa-file-alt"></i> Resúmenes</a></li>
@@ -189,33 +188,32 @@
             </div>
         </section>
 
-        <section id="noticias" class="content-section" style="display: none;">
+        <section id="noticias" class="content-section">
             <div class="section-title">
                 <h2>Últimas Noticias</h2>
             </div>
         
-            <div class="noticia-card" onclick="abrirNoticia('exclusiva-jorge-perez')"
-                style="cursor:pointer; border-left: 5px solid #ff00ff; background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
-                <h3>🚨 EXCLUSIVA: Jorge y Pérez</h3>
-                <p>Click para ver el escándalo...</p>
-            </div>
+            <a href="#detalle-cronica" onclick="abrirNoticia('carlos-cocoa')" style="text-decoration: none; color: inherit;">
+                <div class="noticia-card"
+                    style="border-left: 5px solid #ffc107; background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
+                    <div class="noticia-tag"
+                        style="background: #ffc107; color: black; display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 0.8rem;">
+                        ⚠️ ÚLTIMA HORA</div>
+                    <h3>Carlos: El Rey de la Cocoa 🍷</h3>
+                    <p>Pillado desatado en Cocoa. ¡Haz clic para ver la exclusiva!</p>
+                </div>
+            </a>
         
-            <div class="noticia-card" onclick="abrirNoticia('carlos-noche-loca')"
-                style="cursor:pointer; border-left: 5px solid #ffc107; background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
-                <h3>🍷 Carlos en la Cocoa</h3>
-                <p>Click para ver el parte de guerra...</p>
-            </div>
-        </section>
-        
-        <section id="detalle-cronica" class="content-section" style="display: none;">
-            <button onclick="showSection('noticias')"
-                style="background:#7a1b2e; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; margin-bottom:20px;">
-                ← Volver
-            </button>
-            <div style="background: white; padding: 20px; border-radius: 15px;">
-                <h2 id="titulo-cronica"></h2>
-                <div id="cuerpo-cronica"></div>
-            </div>
+            <a href="#detalle-cronica" onclick="abrirNoticia('jorge-perez')" style="text-decoration: none; color: inherit;">
+                <div class="noticia-card"
+                    style="border-left: 5px solid #ff00ff; background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
+                    <div class="noticia-tag"
+                        style="background: #ff00ff; color: white; display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 0.8rem;">
+                        🚨 EXCLUSIVA</div>
+                    <h3>Jorge y Pérez: ¿Divinas? 💄</h3>
+                    <p>El nuevo look de estos dos que ha paralizado el pueblo.</p>
+                </div>
+            </a>
         </section>
 
         <section id="rumores" class="content-section">
