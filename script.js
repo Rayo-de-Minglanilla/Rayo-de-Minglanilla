@@ -108,6 +108,62 @@ const baseCronicas = {
             `
     }
 };
+const baseNoticias = {
+    'exclusiva-jorge-perez': {
+        titulo: "🚨 EXCLUSIVA: ¿Nuevos fichajes en el Rayo Femenino?",
+        subtitulo: "Pillados Jorge y Pérez con un outfit 'rompedor'",
+        texto: `
+            <div style="text-align:center; margin-bottom:20px;">
+                <img src="jorge.jpeg" alt="Exclusiva Jorge y Pérez" style="width:100%; border-radius:15px; border: 4px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);">
+                <p style="font-style:italic; font-size:0.8rem; color:#666;">Imagen captada por un vecino que 'pasaba por allí'</p>
+            </div>
+
+            <p>Bombazo informativo en las calles de Minglanilla. Nuestros baluartes <strong>Jorge y Pérez</strong> han sido interceptados esta madrugada luciendo un estilismo que ni en la pasarela Cibeles: <strong>vestidazo de seda, tacón de aguja y un eyeliner que ya quisiera Kim Kardashian.</strong></p>
+
+            <p>Los rumores han volado más rápido que Catarran por la banda. Mientras unos medios locales apuntan a que es un <strong>firme apoyo al colectivo travesti</strong>, otros testigos afirman que a la pareja de defensas simplemente "les gusta sentirse divinas" y que el roce del encaje les da más aerodinámica para los cortes de balón.</p>
+
+            <div style="background:#f9f9f9; padding:15px; border-radius:10px; border-left:5px solid #ff00ff; margin:20px 0;">
+                <p><strong>Declaraciones del Club:</strong> "Desde el Rayo de Minglanilla apoyamos la libertad de expresión de nuestros jugadores. Si Jorge quiere defender en minifalda, nosotros le compramos las medias. Eso sí, Pérez tiene prohibido usar tacones de más de 12cm en el campo por riesgo de esguince".</p>
+            </div>
+
+            <p>Se rumorea que el vestuario ya les ha bautizado como <em>'Las Supernenas de la Zaga'</em> y que han pedido que el próximo chándal oficial sea de lentejuelas. ¡La purpurina ha llegado al Fortín para quedarse!</p>
+        `
+    },
+    'carlos-noche-loca': {
+        titulo: "🍷 EXCLUSIVA: Una noche de copas, una noche loca para Carlos",
+        subtitulo: "El mediocentro se convierte en el 'Capo de la Noche'",
+        texto: `
+            <div style="text-align:center; margin-bottom:20px;">
+                <img src="carlos.jpeg" alt="Carlos en la Cocoa" style="width:100%; border-radius:15px; border: 4px solid #7a1b2e; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                <p style="font-style:italic; font-size:0.8rem; color:#666; margin-top:10px;">Carlos minutos antes de intentar fichar al DJ para el Rayo</p>
+            </div>
+
+            <p>Lo que empezó como una "salida tranquila" terminó con la <strong>discoteca Cocoa</strong> a los pies de nuestro mediocentro. Testigos presenciales afirman que <strong>Carlos</strong>, poseído por el espíritu de la victoria, se subió al podio principal para dirigir a las masas.</p>
+
+            <p>Con la mirada perdida pero el sentimiento a flor de piel, Carlos empezó a gritar <strong>"¡AUPA RAYO!"</strong> con tal potencia que el DJ tuvo que parar la música. Lo más increíble es que <strong>toda la discoteca empezó a seguirle el juego</strong>, convirtiendo la pista de baile en una grada de ultra-sur.</p>
+
+            <div style="background:#fde9e9; padding:15px; border-radius:10px; border-left:5px solid #d9534f; margin:20px 0;">
+                <p><strong>El Momento Estelar:</strong> Entre cántico y cántico, Carlos lanzó varias "pullitas" épicas contra La Pesquera. Se dice que gritó: <em>"¡En La Pesquera no hay césped porque se lo comen las vacas!"</em>, lo que provocó el delirio colectivo.</p>
+            </div>
+
+            <p>La noche terminó con Carlos intentando convencer al portero de la Cocoa de que el Rayo necesitaba "seguridad en el área pequeña" y prometiéndole un contrato pagado en raciones de torreznos.</p>
+
+            <p style="font-weight:bold; color:#7a1b2e;">El Míster ha declarado: "Mientras no pierda el equilibrio en el campo, me vale. Pero que traiga una botella para el cuerpo técnico".</p>
+        `
+    
+    }
+    }
+
+
+// Función para abrir la noticia (puedes reutilizar la de las crónicas si quieres)
+function abrirNoticia(id) {
+    const noticia = baseNoticias[id];
+    if (noticia) {
+        document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
+        document.getElementById('titulo-cronica').innerText = noticia.titulo;
+        showSection('detalle-cronica'); // Usamos el mismo contenedor de detalle que las crónicas
+    }
+}
 
 // 5. FUNCIONES DE CRÓNICAS
 function abrirCronica(id) {
