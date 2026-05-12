@@ -192,3 +192,23 @@ body {
     max-height: 80px;
     object-fit: contain;
 }
+.sidebar {
+    /* ... tus otros estilos (width, background, etc) ... */
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh; /* Que no mida más que la pantalla */
+}
+
+.sidebar-menu {
+    overflow-y: auto; /* Esto permite bajar (hacer scroll) solo en el menú */
+    flex-grow: 1;    /* Hace que el menú ocupe el espacio sobrante */
+}
+
+/* Opcional: Para que la barra de scroll sea finita y no afee el menú */
+.sidebar-menu::-webkit-scrollbar {
+    width: 5px;
+}
+.sidebar-menu::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}

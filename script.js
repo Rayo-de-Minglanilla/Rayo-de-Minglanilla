@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     actualizarContador();
 
-    // 2. NAVEGACIÓN DEL MENÚ
+    // 2. NAVEGACIÓN DEL MENÚ (CORREGIDA PARA NUEVAS SECCIONES)
     const links = document.querySelectorAll('.sidebar-menu a');
-    const sections = document.querySelectorAll('.content-section');
     const sidebar = document.getElementById('sidebar');
 
     links.forEach(link => {
@@ -25,9 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetId = href.substring(1);
                 const targetSection = document.getElementById(targetId);
                 
+                // IMPORTANTE: Seleccionamos todas las secciones actuales
+                const allSections = document.querySelectorAll('.content-section');
+
                 if (targetSection) {
                     // Ocultar todas las secciones
-                    sections.forEach(s => {
+                    allSections.forEach(s => {
                         s.classList.remove('active');
                         s.style.display = 'none';
                     });
@@ -36,13 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     targetSection.classList.add('active');
                     targetSection.style.display = 'block';
 
-                    // Actualizar estado del menú
+                    // Actualizar estado visual del menú
                     links.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
 
-                    // CERRAR AUTOMÁTICAMENTE AL HACER CLICK EN UN ENLACE (Móvil)
+                    // Cerrar menú lateral en móvil
                     if (sidebar) sidebar.classList.remove('open');
                     
+                    // Si vamos a resúmenes, nos aseguramos de ver la lista y no una crónica abierta
                     if (targetId === 'resumenes') volverALista();
                     
                     window.scrollTo(0, 0);
@@ -51,16 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. LÓGICA DEL BOTÓN MÓVIL (MENÚ HAMBURGUESA)
+    // 3. LÓGICA DEL BOTÓN MÓVIL
     const mobileBtn = document.getElementById('mobile-btn');
-
     if (mobileBtn && sidebar) {
         mobileBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita que el click se propague
+            e.stopPropagation();
             sidebar.classList.toggle('open');
         });
 
-        // Cerrar el menú si haces click en el contenido principal mientras está abierto
         document.querySelector('.main-content').addEventListener('click', () => {
             if (sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
@@ -69,21 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 4. BASE DE DATOS DE CRÓNICAS
+// 4. BASE DE DATOS DE CRÓNICAS (CON VÍDEO INCLUIDO)
 const baseCronicas = {
     'derbi-pesquera': {
         titulo: "Épica Victoria en el Derbi: El Rayo reina en los penaltis",
         fecha: "10 de Agosto, 2025",
         texto: `
             <p>Hay partidos que se ganan con fútbol y otros que se ganan con el escudo. Tras el descanso, el árbitro señaló un penalti a favor de La Pesquera. Pero el Rayo reaccionó y empatamos.</p>
+            
+            <div style="margin:20px 0; text-align:center; background:#000; padding:10px; border-radius:10px;">
+                <video controls style="width:100%; max-height:400px; border-radius:5px;">
+                    <source src="video-partido.mp4" type="video/mp4">
+                    Tu navegador no soporta vídeos.
+                </video>
+                <p style="color:#fff; font-size:0.8rem; margin-top:5px;">Resumen de la tanda de penaltis</p>
+            </div>
+
             <p>En los minutos finales ellos se pusieron 1-2. Con el tiempo cumplido, sacamos la casta, forzamos un penalti, pusimos el 2-2 y a los penaltis.</p>
-            <h3 style="color:#7a1b2e;">3-0 en Penaltis: Humillación Final</h3>
+            <h3 style="color:#7a1b2e; margin-top:15px;">3-0 en Penaltis: Humillación Final</h3>
             <p>En la tanda no hubo color. Un contundente 3-0. Los penaltis de La Pesquera todavía los están buscando por los pinos.</p>
         `
     }
 };
 
-// 5. FUNCIONES DE CRÓNICAS (Abrir/Cerrar)
+// 5. FUNCIONES DE CRÓNICAS
 function abrirCronica(id) {
     const partido = baseCronicas[id];
     const lista = document.getElementById('lista-cronicas');
@@ -91,16 +101,15 @@ function abrirCronica(id) {
     const contenido = document.getElementById('contenido-cronica');
 
     if (partido && lista && detalle && contenido) {
-        // Esta línea es la que "dibuja" la crónica nueva dentro del div blanco
         contenido.innerHTML = `
-            <h1 style="color:#7a1b2e; margin-bottom:10px;">${partido.titulo}</h1>
+            <h1 style="color:#7a1b2e; margin-bottom:10px; font-size:1.8rem;">${partido.titulo}</h1>
             <p style="color:#666; font-size:0.9rem;">${partido.fecha}</p>
             <hr style="margin:20px 0; opacity:0.2;">
-            <div class="texto-cronica">${partido.texto}</div>
+            <div class="texto-cronica" style="line-height:1.6; color:#333;">${partido.texto}</div>
         `;
         
-        lista.style.display = 'none';   // Esconde la cuadrícula de fotos
-        detalle.style.display = 'block'; // Muestra la hoja blanca con el video
+        lista.style.display = 'none';
+        detalle.style.display = 'block';
         window.scrollTo(0, 0);
     }
 }
@@ -111,5 +120,17 @@ function volverALista() {
     if(lista && detalle) {
         lista.style.display = 'grid';
         detalle.style.display = 'none';
+    }
+}
+
+// 6. FUNCIÓN PARA LA PORRA (EXTRA)
+function enviarPorra() {
+    const gRayo = document.querySelector('input[name="goles_rayo"]').value;
+    const gRival = document.querySelector('input[name="goles_rival"]').value;
+    
+    if(gRayo === "" || gRival === "") {
+        alert("Pon un resultado, ¡no seas de La Pesquera!");
+    } else {
+        alert(`Porra enviada: Rayo ${gRayo} - ${gRival} Rival. ¡El escozor está servido!`);
     }
 }

@@ -206,34 +206,75 @@
                 </div>
             </div>
         </section>
+        <section id="fichajes" class="content-section">
+            <div class="section-title">
+                <h2>¿Quieres ser el próximo 10?</h2>
+            </div>
+            <div
+                style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); max-width: 600px; margin: 0 auto;">
+                <form action="https://formspree.io/f/TU_ID" method="POST"
+                    style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                    <div>
+                        <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #333;">Nombre
+                            Completo</label>
+                        <input type="text" name="nombre" placeholder="Tu nombre o apodo" required
+                            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #333;">Posición</label>
+                        <select name="posicion" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+                            <option value="Portero">Portero</option>
+                            <option value="Defensa">Defensa</option>
+                            <option value="Medio">Mediocentro</option>
+                            <option value="Delantero">Delantero</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #333;">Cervezas
+                            post-partido</label>
+                        <input type="number" name="cervezas" placeholder="¿Cuántas aguantas?"
+                            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+                    </div>
+                    <button type="submit"
+                        style="background: #7a1b2e; color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                        ENVIAR SOLICITUD
+                    </button>
+                </form>
+            </div>
+        </section>
 
         <section id="porra" class="content-section">
-    <div class="section-title">
-        <h2>La Porra de la Afición</h2>
-    </div>
-    <div style="background: linear-gradient(145deg, #0a2144, #7a1b2e); padding: 30px; border-radius: 20px; color: white; text-align: center; border: 2px solid var(--amarillo-rayo);">
-        <p style="margin-bottom: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Próximo Derbi: Rayo vs La Pesquera</p>
-        
-        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
-            <div style="flex: 1;">
-                <img src="escudo.png" style="width: 60px; margin-bottom: 10px;">
-                <input type="number" value="3" disabled style="width: 60px; text-align: center; font-size: 2rem; background: rgba(255,255,255,0.2); color: white; border: 2px solid var(--amarillo-rayo); border-radius: 10px;">
+            <div class="section-title">
+                <h2>La Porra de la Afición</h2>
             </div>
-            
-            <div style="font-size: 2rem; font-weight: bold;">-</div>
-            
-            <div style="flex: 1;">
-                <div style="width: 60px; height: 60px; background: #eee; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold;">Rival</div>
-                <input type="number" placeholder="0" style="width: 60px; text-align: center; font-size: 2rem; background: white; color: #333; border: none; border-radius: 10px;">
+            <div
+                style="background: linear-gradient(145deg, #0a2144, #7a1b2e); padding: 30px; border-radius: 20px; color: white; text-align: center; border: 2px solid #f1c40f;">
+                <p style="margin-bottom: 20px; font-weight: bold;">Rayo de Minglanilla vs La Pesquera</p>
+
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                    <div style="flex: 1;">
+                        <img src="escudo.png" style="width: 50px; margin-bottom: 10px;">
+                        <input type="number" name="goles_rayo" placeholder="0"
+                            style="width: 70px; text-align: center; font-size: 2rem; background: white; color: #333; border: 3px solid #f1c40f; border-radius: 10px;">
+                    </div>
+
+                    <div style="font-size: 2rem; font-weight: bold;">-</div>
+
+                    <div style="flex: 1;">
+                        <div
+                            style="width: 50px; height: 50px; background: #eee; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold;">
+                            Rival</div>
+                        <input type="number" name="goles_rival" placeholder="0"
+                            style="width: 70px; text-align: center; font-size: 2rem; background: white; color: #333; border: none; border-radius: 10px;">
+                    </div>
+                </div>
+
+                <button onclick="alert('¡Porra enviada! Veremos si aciertas.')"
+                    style="background: #f1c40f; color: #0a2144; padding: 12px 25px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer;">
+                    ENVIAR PORRA
+                </button>
             </div>
-        </div>
-        
-        <button onclick="alert('¡Porra registrada! El escozor está aumentando en el pueblo vecino.')" style="background: var(--amarillo-rayo); color: #0a2144; padding: 12px 25px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer;">
-            VOTAR RESULTADO
-        </button>
-        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.8;">* El marcador del Rayo está bloqueado por motivos de realismo histórico.</p>
-    </div>
-</section>
+        </section>
 
     </main>
 
