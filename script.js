@@ -138,22 +138,27 @@ const baseNoticias = {
 
 // Función para abrir la noticia (puedes reutilizar la de las crónicas si quieres)
 function abrirNoticia(id) {
+    console.log("Intentando abrir noticia:", id); // Esto saldrá en la consola (F12)
+    
     const noticia = baseNoticias[id];
+    
     if (noticia) {
-        // Buscamos los huecos donde va el contenido (usa los mismos que la crónica para ahorrar código)
-        const cuerpo = document.getElementById('cuerpo-cronica');
-        const titulo = document.getElementById('titulo-cronica');
+        // 1. Rellenamos los datos
+        document.getElementById('titulo-cronica').innerText = noticia.titulo;
+        document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
         
-        if (cuerpo && titulo) {
-            cuerpo.innerHTML = noticia.texto;
-            titulo.innerText = noticia.titulo;
-            
-            // Esta función debe ocultar las demás y mostrar el detalle
-            showSection('detalle-cronica'); 
-            window.scrollTo(0, 0); // Para que suba arriba del todo al abrir
+        // 2. OCULTAMOS TODAS las secciones primero
+        const secciones = document.querySelectorAll('.content-section');
+        secciones.forEach(sec => sec.style.display = 'none');
+        
+        // 3. MOSTRAMOS la sección de detalle
+        const detalle = document.getElementById('detalle-cronica');
+        if(detalle) {
+            detalle.style.display = 'block';
+            window.scrollTo(0, 0);
+        } else {
+            alert("Error: No encuentro el contenedor 'detalle-cronica' en el HTML");
         }
-    } else {
-        console.error("No se encontró la noticia con ID:", id);
     }
 }
 
