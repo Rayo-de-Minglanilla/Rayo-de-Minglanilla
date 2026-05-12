@@ -71,32 +71,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 4. BASE DE DATOS DE CRÓNICAS (CON VÍDEO INCLUIDO)
-    const baseCronicas = {
+    // 4. BASE DE DATOS DE CRÓNICAS (CON TODA LA ÉPICA)
+const baseCronicas = {
+    'derbi-pesquera': {
+        titulo: "Épica Victoria en el Derbi: El Rayo reina en los penaltis",
+        fecha: "10 de Agosto, 2025",
         texto: `
-        <p>Hay partidos que se ganan con fútbol y otros que se ganan con el escudo. El derbi comenzó con una intensidad eléctrica, donde el Rayo de Minglanilla avisó pronto: <strong>Alen</strong> estrelló un balón en el <strong>larguero</strong> en los primeros minutos que hizo temblar la portería rival y despertó a la grada local.</p>
-        
-        <p>El dominio inicial se tradujo en el primer rugido de la tarde gracias a un golazo de <strong>Ismael</strong>, que adelantó al equipo demostrando su calidad. El control del juego fue absoluto gracias al despliegue de <strong>Jaime, Alen y Carlos</strong> en la sala de máquinas; los tres mediocentros dictaron el ritmo del partido con un juego fluido y una presión asfixiante.</p>
+            <p>Hay partidos que se ganan con fútbol y otros que se ganan con el escudo. El derbi comenzó con una intensidad eléctrica, donde el Rayo de Minglanilla avisó pronto: <strong>Alen</strong> estrelló un balón en el <strong>larguero</strong> en los primeros minutos que hizo temblar la portería rival y despertó a la grada local.</p>
+            
+            <p>El dominio inicial se tradujo en el primer rugido de la tarde gracias a un golazo de <strong>Ismael</strong>, que adelantó al equipo demostrando su calidad. El control del juego fue absoluto gracias al despliegue de <strong>Jaime, Alen y Carlos</strong> en la sala de máquinas; los tres mediocentros dictaron el ritmo del partido con un juego fluido y una presión asfixiante.</p>
 
-        
+            
 
-        <p>Por las bandas, <strong>Catarran</strong> fue un auténtico puñal, desbordando con internadas constantes que volvieron loca a la defensa de La Pesquera. Atrás, la solidez fue la clave: <strong>Vinagres y Jorge</strong> se mostraron imperiales, cortando cada avance rival con una contundencia que dio seguridad a todo el bloque.</p>
+            <p>Por las bandas, <strong>Catarran</strong> fue un auténtico puñal, desbordando con internadas constantes que volvieron loca a la defensa de La Pesquera. Atrás, la solidez fue la clave: <strong>Vinagres y Jorge</strong> se mostraron imperiales, cortando cada avance rival con una contundencia que dio seguridad a todo el bloque.</p>
 
-        <p>Sin embargo, el derbi es caprichoso. Tras el descanso, el árbitro señaló un penalti a favor de La Pesquera y en los minutos finales ellos consiguieron ponerse 1-2. Parecía que todo estaba perdido, pero las <strong>brillantes decisiones del Míster</strong> desde el banquillo mantuvieron la fe del equipo.</p>
+            <p>Sin embargo, el derbi es caprichoso. Tras el descanso, el árbitro señaló un penalti a favor de La Pesquera y en los minutos finales ellos consiguieron ponerse 1-2. Parecía que todo estaba perdido, pero las <strong>brillantes decisiones del Míster</strong> desde el banquillo mantuvieron la fe del equipo.</p>
 
-        <p>Con el tiempo cumplido, sacamos la casta. Forzamos un penalti salvador y <strong>Iker</strong>, con nervios de acero, lo mandó al fondo de las mallas para poner el 2-2 definitivo y desatar la locura. Directos a los penaltis.</p>
-        
-        <h3 style="color:#7a1b2e; margin-top:20px; font-size:1.5rem; border-left: 5px solid #f1c40f; padding-left: 15px;">3-0 en Penaltis: Humillación Final</h3>
-        <p>En la tanda no hubo color. Un contundente 3-0 que certificó la superioridad local. Los penaltis de La Pesquera todavía los están buscando por los pinos mientras Minglanilla celebra una victoria que pasará a la historia.</p>
-        <div style="margin:25px 0; text-align:center; background:#000; padding:10px; border-radius:15px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
-            <video controls style="width:100%; max-height:450px; border-radius:8px;">
-                <source src="video-partido.mp4" type="video/mp4">
-                Tu navegador no soporta vídeos.
-            </video>
-            <p style="color:#fff; font-size:0.85rem; margin-top:8px; font-style:italic;">Resumen de la épica tanda de penaltis</p>
-        </div>
-        
-        `
-    };
+            <p>Con el tiempo cumplido, sacamos la casta. Forzamos un penalti salvador y <strong>Iker</strong>, con nervios de acero, lo mandó al fondo de las mallas para poner el 2-2 definitivo y desatar la locura. Directos a los penaltis.</p>
+            
+            <h3 style="color:#7a1b2e; margin-top:20px; font-size:1.5rem; border-left: 5px solid #f1c40f; padding-left: 15px;">3-0 en Penaltis: Humillación Final</h3>
+            <p>En la tanda no hubo color. Un contundente 3-0 que certificó la superioridad local. Los penaltis de La Pesquera todavía los están buscando por los pinos mientras Minglanilla celebra una victoria que pasará a la historia.</p>
+
+            <div style="margin:25px 0; text-align:center; background:#000; padding:10px; border-radius:15px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                <video controls style="width:100%; max-height:450px; border-radius:8px;">
+                    <source src="video-partido.mp4" type="video/mp4">
+                    Tu navegador no soporta vídeos.
+                </video>
+                <p style="color:#fff; font-size:0.85rem; margin-top:8px; font-style:italic;">Resumen de la épica tanda de penaltis</p>
+            </div>
+
+            <p>El derbi se tiñó de rayista, con un equipo que mostró carácter, calidad y una mentalidad ganadora que no se rinde nunca. El Rayo de Minglanilla no solo ganó el partido, sino que dejó claro quién manda. ¡Mucho Rayo, poco rival!</p>`
+    }
+};
 
 // 5. FUNCIONES DE CRÓNICAS
 function abrirCronica(id) {
