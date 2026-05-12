@@ -109,45 +109,42 @@ const baseCronicas = {
     }
 };
 
+// --- MOTOR DE LA WEB (Ponlo arriba del todo) ---
 function showSection(sectionId) {
-    // 1. Buscamos todas las secciones
+    console.log("Cambiando a la sección:", sectionId);
     const sections = document.querySelectorAll('.content-section');
-    
-    // 2. Las ocultamos todas
-    sections.forEach(section => {
-        section.style.display = 'none';
-    });
-    
-    // 3. Mostramos la que queremos
+    sections.forEach(s => s.style.display = 'none');
+
     const activeSection = document.getElementById(sectionId);
     if (activeSection) {
         activeSection.style.display = 'block';
+    } else {
+        console.error("No existe la sección con id:", sectionId);
     }
 }
-// 1. Los datos de las noticias
+
+// --- BASE DE DATOS DE NOTICIAS ---
 const baseNoticias = {
     "exclusiva-jorge-perez": {
-        titulo: "🚨 Jorge y Pérez: ¿Divinas?",
-        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:10px;'><p>Pillados con vestidazo y eyeliner. El club dice que si quieren jugar en minifalda, adelante.</p>"
+        titulo: "🚨 EXCLUSIVA: Jorge y Pérez",
+        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:15px;'><p>Pillados con un outfit rompedor. El club apoya que se sientan divinas.</p>"
     },
     "carlos-noche-loca": {
         titulo: "🍷 Carlos: El Rey de la Cocoa",
-        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:10px;'><p>Carlos se subió al podio de la Cocoa y puso a todo el mundo a gritar Aupa Rayo.</p>"
+        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:15px;'><p>Carlos se subió al podio de la Cocoa gritando Aupa Rayo y metiéndose con el patatal de La Pesquera. ¡Toda la disco le seguía!</p>"
     }
 };
 
-// 2. La función mágica
+// --- FUNCIÓN PARA ABRIR NOTICIAS ---
 function abrirNoticia(id) {
     const noticia = baseNoticias[id];
     if (noticia) {
         document.getElementById('titulo-cronica').innerHTML = noticia.titulo;
         document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
-
-        // Usamos la función de arriba para ir a la sección de detalle
         showSection('detalle-cronica');
-        window.scrollTo(0, 0);
     }
 }
+
 
 // 5. FUNCIONES DE CRÓNICAS
 function abrirCronica(id) {
