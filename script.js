@@ -114,30 +114,31 @@ const baseCronicas = {
 const noticiasDatos = {
     "jorge-perez": {
         titulo: "🚨 EXCLUSIVA: Jorge y Pérez",
-        texto: `<div style="text-align:center;"><img src="jorge.jpeg" style="width:100%; border-radius:15px; margin-bottom:15px;"></div>
-                <p>Nuestros defensas han sido pillados con vestidazos de seda y un maquillaje impecable. El club ha declarado: <b>"Si quieren defender con tacones, les pondremos césped de seda"</b>.</p>`
+        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:10px;'><p>Nuestros defensas han sido pillados con vestidazos de seda. El club dice: 'Si quieren defender con tacones, les pondremos césped de seda'.</p>"
     },
     "carlos-cocoa": {
         titulo: "🍷 Carlos: El Rey de la Cocoa",
-        texto: `<div style="text-align:center;"><img src="carlos.jpeg" style="width:100%; border-radius:15px; margin-bottom:15px;"></div>
-                <p>Carlos se subió al podio de la discoteca Cocoa gritando <b>"¡AUPA RAYO!"</b> y <b>"¡EL CAMPO DE LA PESQUERA ES UN PATATAL!"</b>. Toda la discoteca le siguió en los cánticos. El Míster pide que para la próxima invite a una ronda.</p>`
+        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:10px;'><p>Carlos se subió al podio de la Cocoa gritando AUPA RAYO y que el campo de La Pesquera es un patatal. ¡Toda la disco le seguía!</p>"
     }
 };
 
-// 2. La función (Copia exacta de cómo abres las crónicas)
 function abrirNoticia(id) {
+    console.log("Cargando noticia:", id);
     const data = noticiasDatos[id];
+    
     if (data) {
-        // Usamos los mismos IDs que usas en las crónicas
+        // Rellenamos la info
         document.getElementById('titulo-cronica').innerHTML = data.titulo;
         document.getElementById('cuerpo-cronica').innerHTML = data.texto;
         
-        // Usamos la misma función que usas para mostrar secciones
-        showSection('detalle-cronica');
-        window.scrollTo(0, 0);
+        // FORZAMOS EL SALTO: Esto es lo que hace que "entre"
+        window.location.hash = "detalle-cronica";
+        
+        // Por si acaso tu plantilla necesita ver el bloque
+        const detalle = document.getElementById('detalle-cronica');
+        if (detalle) detalle.style.display = 'block';
     }
 }
-
 
 // 5. FUNCIONES DE CRÓNICAS
 function abrirCronica(id) {
