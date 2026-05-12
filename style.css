@@ -220,6 +220,9 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+#estadio img:hover {
+    transform: scale(1.05);
+}
 
 .player-card {
     background: white;
