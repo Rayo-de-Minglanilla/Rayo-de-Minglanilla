@@ -112,31 +112,34 @@ const baseCronicas = {
 // --- MOTOR DE LA WEB (Ponlo arriba del todo) ---
 // 1. Los datos (Asegúrate de que las IDs coincidan con las de arriba)
 // OBJETO DE DATOS
+
+
+// FUNCIÓN DE CARGA
 const noticiasDatos = {
     "jorge-perez": {
         titulo: "🚨 EXCLUSIVA: Jorge y Pérez",
-        texto: `<div style="text-align:center;"><img src="jorge.jpeg" style="width:100%; border-radius:10px;"></div>
-                <p style="margin-top:15px;">Nuestros defensas han sido pillados con vestidazos de seda. El club dice: 'Si quieren defender con tacones, les pondremos césped de seda'.</p>`
+        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:10px;'><p>Pillados con vestidazos de seda. El club dice: 'Si quieren defender con tacones, les pondremos césped de seda'.</p>"
     },
     "carlos-cocoa": {
         titulo: "🍷 Carlos: El Rey de la Cocoa",
-        texto: `<div style="text-align:center;"><img src="carlos.jpeg" style="width:100%; border-radius:10px;"></div>
-                <p style="margin-top:15px;">Carlos se subió al podio de la Cocoa gritando <b>AUPA RAYO</b> y que el campo de La Pesquera es un patatal. ¡Toda la disco le seguía!</p>`
+        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:10px;'><p>Carlos se subió al podio de la Cocoa gritando AUPA RAYO y que el campo de La Pesquera es un patatal. ¡Toda la disco le seguía!</p>"
     }
 };
 
-// FUNCIÓN DE CARGA
 function abrirNoticia(id) {
     const data = noticiasDatos[id];
     if (data) {
-        // Rellenamos los huecos que ya te funcionan en las crónicas
-        const tituloContenedor = document.getElementById('titulo-cronica');
-        const cuerpoContenedor = document.getElementById('cuerpo-cronica');
-        
-        if (tituloContenedor && cuerpoContenedor) {
-            tituloContenedor.innerHTML = data.titulo;
-            cuerpoContenedor.innerHTML = data.texto;
-        }
+        // 1. Rellenamos el contenido
+        document.getElementById('titulo-cronica').innerHTML = data.titulo;
+        document.getElementById('cuerpo-cronica').innerHTML = data.texto;
+
+        // 2. FORZAMOS LA NAVEGACIÓN
+        // Buscamos si existe un enlace a resumenes en tu menú y lo "simulamos"
+        // o simplemente cambiamos el hash manualmente:
+        window.location.hash = ""; // Limpiamos
+        setTimeout(() => {
+            window.location.hash = "detalle-cronica";
+        }, 10);
     }
 }
 
