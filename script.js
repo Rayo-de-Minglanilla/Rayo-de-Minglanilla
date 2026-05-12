@@ -108,58 +108,34 @@ const baseCronicas = {
             `
     }
 };
+// 1. Los datos de las noticias
 const baseNoticias = {
     "exclusiva-jorge-perez": {
-        titulo: "🚨 EXCLUSIVA: ¿Nuevos fichajes en el Rayo Femenino?",
-        texto: `
-            <div style="text-align:center; margin-bottom:20px;">
-                <img src="jorge.jpeg" style="width:100%; border-radius:15px; border: 4px solid #ff00ff;">
-            </div>
-            <p>Bombazo informativo. Nuestros baluartes <strong>Jorge y Pérez</strong> han sido interceptados con un estilismo de pasarela: vestidazo de seda y eyeliner profesional.</p>
-            <p>El club apoya la causa: "Si Jorge quiere defender en minifalda, le compramos las medias".</p>
-        `
+        titulo: "🚨 Jorge y Pérez: ¿Divinas?",
+        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:10px;'><p>Pillados con vestidazo y eyeliner. El club dice que si quieren jugar en minifalda, adelante.</p>"
     },
     "carlos-noche-loca": {
-        titulo: "🍷 EXCLUSIVA: Carlos desata la locura en la Cocoa",
-        texto: `
-            <div style="text-align:center; margin-bottom:20px;">
-                <img src="carlos.jpeg" style="width:100%; border-radius:15px; border: 4px solid #7a1b2e;">
-            </div>
-            <p>La <strong>discoteca Cocoa</strong> se rindió ante <strong>Carlos</strong>. Se subió al podio, paró el reggaetón y puso a todo el mundo a gritar <strong>"¡AUPA RAYO!"</strong>.</p>
-            <p>Aprovechó para recordar que en el campo de La Pesquera no hay césped porque se lo comen las vacas. El Míster pide que para la próxima traiga una botella para el staff.</p>
-        `
+        titulo: "🍷 Carlos: El Rey de la Cocoa",
+        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:10px;'><p>Carlos se subió al podio de la Cocoa y puso a todo el mundo a gritar Aupa Rayo.</p>"
     }
 };
 
-
-// Función para abrir la noticia (puedes reutilizar la de las crónicas si quieres)
+// 2. La función mágica
 function abrirNoticia(id) {
     const noticia = baseNoticias[id];
-    
     if (noticia) {
-        // Rellenar título y cuerpo
-        const contenedorTitulo = document.getElementById('titulo-cronica');
-        const contenedorCuerpo = document.getElementById('cuerpo-cronica');
+        // Rellenamos datos
+        document.getElementById('titulo-cronica').innerHTML = noticia.titulo;
+        document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
+
+        // Forzamos el cambio de vista
+        const todas = document.querySelectorAll('.content-section');
+        todas.forEach(s => s.style.display = 'none');
         
-        if (contenedorTitulo && contenedorCuerpo) {
-            contenedorTitulo.innerHTML = noticia.titulo;
-            contenedorCuerpo.innerHTML = noticia.texto;
-
-            // OCULTAR todas las secciones manualmente
-            const secciones = document.getElementsByClassName('content-section');
-            for (let i = 0; i < secciones.length; i++) {
-                secciones[i].style.display = 'none';
-            }
-
-            // MOSTRAR la sección de detalle
-            const detalle = document.getElementById('detalle-cronica');
-            if (detalle) {
-                detalle.style.display = 'block';
-                window.scrollTo(0, 0);
-            }
-        }
+        document.getElementById('detalle-cronica').style.display = 'block';
+        window.scrollTo(0,0);
     } else {
-        alert("No se encuentra la noticia: " + id);
+        alert("Error: No encuentro la noticia " + id);
     }
 }
 

@@ -189,42 +189,34 @@
             </div>
         </section>
 
-    <section id="noticias" class="content-section" style="display: none;">
-        <div class="section-title">
-            <h2>Últimas Noticias</h2>
-        </div>
-    
-        <div class="noticia-card" onclick="abrirNoticia('exclusiva-jorge-perez')"
-            style="cursor:pointer; border-left-color: #ff00ff;">
-            <div class="noticia-tag" style="background: #ff00ff;">🚨 EXCLUSIVA MUNDIAL</div>
-            <h3>¿Jorge y Pérez con tacones? El escándalo del que todos hablan</h3>
-            <p>Han sido pillados con un look muy poco habitual para un central...</p>
-            <img src="jorge.jpeg"
-                style="width:100%; height:150px; object-fit:cover; border-radius:10px; margin-top:10px; filter: blur(2px);">
-            <span class="noticia-fecha">Hace 2 horas</span>
-            <div style="text-align:right; font-weight:bold; color:#ff00ff;">Leer más...</div>
-        </div>
-    
-        <div class="noticia-card" onclick="abrirNoticia('carlos-noche-loca')"
-            style="cursor:pointer; border-left-color: #ffc107;">
-            <div class="noticia-tag" style="background: #ffc107; color: black;">⚠️ ÚLTIMA HORA</div>
-            <h3>Escándalo en la Cocoa: Carlos y su entrenamiento 'espirituoso'</h3>
-            <p>Haz clic para ver la foto y el parte de guerra...</p>
-            <img src="carlos.jpeg" style="width:100%; height:150px; object-fit:cover; border-radius:10px; margin-top:10px;">
-        </div>
-    </section>
-    <section id="detalle-cronica" class="content-section" style="display: none;">
-        <button onclick="showSection('noticias')"
-            style="background:#7a1b2e; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; margin-bottom:20px;">
-            ← Volver a Noticias
-        </button>
-    
-        <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-            <h2 id="titulo-cronica" style="color: #7a1b2e; margin-bottom: 20px;"></h2>
-            <div id="cuerpo-cronica" style="line-height: 1.6; color: #333;">
+        <section id="noticias" class="content-section" style="display: none;">
+            <div class="section-title">
+                <h2>Últimas Noticias</h2>
             </div>
-        </div>
-    </section>
+        
+            <div class="noticia-card" onclick="abrirNoticia('exclusiva-jorge-perez')"
+                style="cursor:pointer; border-left: 5px solid #ff00ff; background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
+                <h3>🚨 EXCLUSIVA: Jorge y Pérez</h3>
+                <p>Click para ver el escándalo...</p>
+            </div>
+        
+            <div class="noticia-card" onclick="abrirNoticia('carlos-noche-loca')"
+                style="cursor:pointer; border-left: 5px solid #ffc107; background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
+                <h3>🍷 Carlos en la Cocoa</h3>
+                <p>Click para ver el parte de guerra...</p>
+            </div>
+        </section>
+        
+        <section id="detalle-cronica" class="content-section" style="display: none;">
+            <button onclick="showSection('noticias')"
+                style="background:#7a1b2e; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; margin-bottom:20px;">
+                ← Volver
+            </button>
+            <div style="background: white; padding: 20px; border-radius: 15px;">
+                <h2 id="titulo-cronica"></h2>
+                <div id="cuerpo-cronica"></div>
+            </div>
+        </section>
 
         <section id="rumores" class="content-section">
             <div class="section-title">
