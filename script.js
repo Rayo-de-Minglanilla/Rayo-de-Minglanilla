@@ -108,6 +108,22 @@ const baseCronicas = {
             `
     }
 };
+
+function showSection(sectionId) {
+    // 1. Buscamos todas las secciones
+    const sections = document.querySelectorAll('.content-section');
+    
+    // 2. Las ocultamos todas
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // 3. Mostramos la que queremos
+    const activeSection = document.getElementById(sectionId);
+    if (activeSection) {
+        activeSection.style.display = 'block';
+    }
+}
 // 1. Los datos de las noticias
 const baseNoticias = {
     "exclusiva-jorge-perez": {
@@ -124,18 +140,12 @@ const baseNoticias = {
 function abrirNoticia(id) {
     const noticia = baseNoticias[id];
     if (noticia) {
-        // Rellenamos datos
         document.getElementById('titulo-cronica').innerHTML = noticia.titulo;
         document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
 
-        // Forzamos el cambio de vista
-        const todas = document.querySelectorAll('.content-section');
-        todas.forEach(s => s.style.display = 'none');
-        
-        document.getElementById('detalle-cronica').style.display = 'block';
-        window.scrollTo(0,0);
-    } else {
-        alert("Error: No encuentro la noticia " + id);
+        // Usamos la función de arriba para ir a la sección de detalle
+        showSection('detalle-cronica');
+        window.scrollTo(0, 0);
     }
 }
 
