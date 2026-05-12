@@ -114,34 +114,7 @@ const baseCronicas = {
 // OBJETO DE DATOS
 
 
-// FUNCIÓN DE CARGA
-const noticiasDatos = {
-    "jorge-perez": {
-        titulo: "🚨 EXCLUSIVA: Jorge y Pérez",
-        texto: "<img src='jorge.jpeg' style='width:100%; border-radius:10px;'><p>Pillados con vestidazos de seda. El club dice: 'Si quieren defender con tacones, les pondremos césped de seda'.</p>"
-    },
-    "carlos-cocoa": {
-        titulo: "🍷 Carlos: El Rey de la Cocoa",
-        texto: "<img src='carlos.jpeg' style='width:100%; border-radius:10px;'><p>Carlos se subió al podio de la Cocoa gritando AUPA RAYO y que el campo de La Pesquera es un patatal. ¡Toda la disco le seguía!</p>"
-    }
-};
 
-function abrirNoticia(id) {
-    const data = noticiasDatos[id];
-    if (data) {
-        // 1. Rellenamos el contenido
-        document.getElementById('titulo-cronica').innerHTML = data.titulo;
-        document.getElementById('cuerpo-cronica').innerHTML = data.texto;
-
-        // 2. FORZAMOS LA NAVEGACIÓN
-        // Buscamos si existe un enlace a resumenes en tu menú y lo "simulamos"
-        // o simplemente cambiamos el hash manualmente:
-        window.location.hash = ""; // Limpiamos
-        setTimeout(() => {
-            window.location.hash = "detalle-cronica";
-        }, 10);
-    }
-}
 
 // 5. FUNCIONES DE CRÓNICAS
 function abrirCronica(id) {
