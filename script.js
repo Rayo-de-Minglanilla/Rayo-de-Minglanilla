@@ -109,28 +109,24 @@ const baseCronicas = {
     }
 };
 const baseNoticias = {
-    'exclusiva-jorge-perez': {
+    "exclusiva-jorge-perez": {
         titulo: "🚨 EXCLUSIVA: ¿Nuevos fichajes en el Rayo Femenino?",
-        subtitulo: "Pillados Jorge y Pérez con un outfit 'rompedor'",
         texto: `
             <div style="text-align:center; margin-bottom:20px;">
-                <img src="jorge.jpeg" alt="Exclusiva Jorge y Pérez" style="width:100%; border-radius:15px; border: 4px solid #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);">
-                <p style="font-style:italic; font-size:0.8rem; color:#666; margin-top:10px;">Imagen captada por un vecino que 'pasaba por allí'</p>
+                <img src="jorge.jpeg" style="width:100%; border-radius:15px; border: 4px solid #ff00ff;">
             </div>
-            <p>Bombazo informativo. Nuestros baluartes <strong>Jorge y Pérez</strong> han sido interceptados luciendo un estilismo de pasarela: <strong>vestidazo de seda y un eyeliner que ya quisiera Kim Kardashian.</strong></p>
-            <p>Mientras unos apuntan al apoyo al colectivo, otros dicen que a la pareja de defensas simplemente le gusta sentirse divinas. El club ha dicho: "Si Jorge quiere defender en minifalda, le compramos las medias".</p>
+            <p>Bombazo informativo. Nuestros baluartes <strong>Jorge y Pérez</strong> han sido interceptados con un estilismo de pasarela: vestidazo de seda y eyeliner profesional.</p>
+            <p>El club apoya la causa: "Si Jorge quiere defender en minifalda, le compramos las medias".</p>
         `
     },
-    'carlos-noche-loca': {
-        titulo: "🍷 EXCLUSIVA: Carlos y su noche loca",
-        subtitulo: "El mediocentro se convierte en el 'Capo de la Noche'",
+    "carlos-noche-loca": {
+        titulo: "🍷 EXCLUSIVA: Carlos desata la locura en la Cocoa",
         texto: `
             <div style="text-align:center; margin-bottom:20px;">
-                <img src="carlos.jpeg" alt="Carlos en la Cocoa" style="width:100%; border-radius:15px; border: 4px solid #7a1b2e; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
-                <p style="font-style:italic; font-size:0.8rem; color:#666; margin-top:10px;">Carlos liderando a las masas en el podio de la Cocoa</p>
+                <img src="carlos.jpeg" style="width:100%; border-radius:15px; border: 4px solid #7a1b2e;">
             </div>
-            <p>La <strong>discoteca Cocoa</strong> se rindió ante nuestro mediocentro. <strong>Carlos</strong> se subió al podio y detuvo la música para gritar <strong>"¡AUPA RAYO!"</strong>.</p>
-            <p>Toda la discoteca le siguió mientras lanzaba pullitas contra La Pesquera: <em>"¡Su césped se lo comen las vacas!"</em>. El Míster ha dicho que mientras no pierda el equilibrio en el campo, todo bien, pero que traiga una botella para el staff.</p>
+            <p>La <strong>discoteca Cocoa</strong> se rindió ante <strong>Carlos</strong>. Se subió al podio, paró el reggaetón y puso a todo el mundo a gritar <strong>"¡AUPA RAYO!"</strong>.</p>
+            <p>Aprovechó para recordar que en el campo de La Pesquera no hay césped porque se lo comen las vacas. El Míster pide que para la próxima traiga una botella para el staff.</p>
         `
     }
 };
@@ -138,27 +134,32 @@ const baseNoticias = {
 
 // Función para abrir la noticia (puedes reutilizar la de las crónicas si quieres)
 function abrirNoticia(id) {
-    console.log("Intentando abrir noticia:", id); // Esto saldrá en la consola (F12)
-    
     const noticia = baseNoticias[id];
     
     if (noticia) {
-        // 1. Rellenamos los datos
-        document.getElementById('titulo-cronica').innerText = noticia.titulo;
-        document.getElementById('cuerpo-cronica').innerHTML = noticia.texto;
+        // Rellenar título y cuerpo
+        const contenedorTitulo = document.getElementById('titulo-cronica');
+        const contenedorCuerpo = document.getElementById('cuerpo-cronica');
         
-        // 2. OCULTAMOS TODAS las secciones primero
-        const secciones = document.querySelectorAll('.content-section');
-        secciones.forEach(sec => sec.style.display = 'none');
-        
-        // 3. MOSTRAMOS la sección de detalle
-        const detalle = document.getElementById('detalle-cronica');
-        if(detalle) {
-            detalle.style.display = 'block';
-            window.scrollTo(0, 0);
-        } else {
-            alert("Error: No encuentro el contenedor 'detalle-cronica' en el HTML");
+        if (contenedorTitulo && contenedorCuerpo) {
+            contenedorTitulo.innerHTML = noticia.titulo;
+            contenedorCuerpo.innerHTML = noticia.texto;
+
+            // OCULTAR todas las secciones manualmente
+            const secciones = document.getElementsByClassName('content-section');
+            for (let i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = 'none';
+            }
+
+            // MOSTRAR la sección de detalle
+            const detalle = document.getElementById('detalle-cronica');
+            if (detalle) {
+                detalle.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
         }
+    } else {
+        alert("No se encuentra la noticia: " + id);
     }
 }
 
