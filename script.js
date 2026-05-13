@@ -57,23 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. LÓGICA DEL BOTÓN MÓVIL
     const mobileBtn = document.getElementById('mobile-btn');
     if (mobileBtn && sidebar) {
-        // Prevenir scroll del body cuando el menú está abierto
-        const preventScroll = (e) => {
-            if (sidebar.classList.contains('open')) {
-                e.preventDefault();
-            }
-        };
-
         mobileBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             sidebar.classList.toggle('open');
             document.body.classList.toggle('menu-open');
-            
-            if (sidebar.classList.contains('open')) {
-                document.addEventListener('touchmove', preventScroll, { passive: false });
-            } else {
-                document.removeEventListener('touchmove', preventScroll);
-            }
         });
 
         // Cerrar menú cuando se hace clic en el contenido principal
@@ -82,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!e.target.closest('.mobile-menu-btn') && sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
                 document.body.classList.remove('menu-open');
-                document.removeEventListener('touchmove', preventScroll);
             }
         });
 
@@ -91,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!e.target.closest('.sidebar') && !e.target.closest('.mobile-menu-btn') && sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
                 document.body.classList.remove('menu-open');
-                document.removeEventListener('touchmove', preventScroll);
             }
         });
     }
