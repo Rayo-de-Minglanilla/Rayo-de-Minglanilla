@@ -41,8 +41,10 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
+    flex-grow: 1;
+    min-height: 0;
 }
 .sidebar-menu a {
     display: block;
@@ -708,7 +710,6 @@ body.menu-open {
     flex-direction: column;
     min-height: 0;
     overflow: hidden;
-    touch-action: pan-y;
 }
 
 /* Opcional: Para que la barra de scroll sea finita y no afee el menú */
