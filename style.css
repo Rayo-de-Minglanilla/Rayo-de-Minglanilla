@@ -670,6 +670,21 @@ body {
     -webkit-overflow-scrolling: touch; /* Hace que el scroll sea suave en iPhone */
 }
 
+/* Overlay oscuro para cerrar menú en móvil */
+.sidebar::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
 /* Contenedor de los enlaces */
 .sidebar-menu {
     flex-grow: 1;
@@ -710,10 +725,43 @@ body {
     .sidebar {
         left: -280px; /* Escondido por defecto */
         width: 280px; /* Un pelín más ancho en móvil para que sea fácil tocar */
+        height: 100vh;
     }
 
     .sidebar.open {
         left: 0; /* Se muestra al abrir */
+    }
+
+    .sidebar.open::before {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar-header {
+        padding: 15px 20px; /* Más compacto en móvil */
+        flex-shrink: 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-logo {
+        width: 60px; /* Más pequeño en móvil */
+        margin-bottom: 8px;
+    }
+
+    .sidebar-header h3 {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .sidebar-menu {
+        overflow-y: auto; /* Permite scroll dentro del menú */
+        flex-grow: 1;
+        padding: 10px 0;
+    }
+
+    .sidebar-menu a {
+        padding: 12px 20px; /* Un poco más compacto */
+        font-size: 0.95rem;
     }
 
     .main-content {

@@ -62,8 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebar.classList.toggle('open');
         });
 
-        document.querySelector('.main-content').addEventListener('click', () => {
-            if (sidebar.classList.contains('open')) {
+        // Cerrar menú cuando se hace clic en el contenido principal
+        document.querySelector('.main-content').addEventListener('click', (e) => {
+            // No cerrar si el clic es en el botón del menú
+            if (!e.target.closest('.mobile-menu-btn') && sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Cerrar menú cuando se hace clic fuera (en cualquier parte del documento)
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.sidebar') && !e.target.closest('.mobile-menu-btn') && sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
             }
         });
