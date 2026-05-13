@@ -662,12 +662,10 @@ body {
     border-right: 4px solid var(--amarillo-rayo);
     transition: 0.3s ease;
     
-    /* ESTO ES LO QUE PERMITE EL SCROLL */
+    /* FLEX LAYOUT */
     display: flex;
     flex-direction: column;
-    overflow-y: auto;          /* Permite bajar si hay muchos elementos */
     overflow-x: hidden;        /* Evita rebotes laterales */
-    -webkit-overflow-scrolling: touch; /* Hace que el scroll sea suave en iPhone */
 }
 
 /* Overlay oscuro para cerrar menú en móvil */
@@ -690,6 +688,9 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;
 }
 
 /* Opcional: Para que la barra de scroll sea finita y no afee el menú */
@@ -751,12 +752,6 @@ body {
     .sidebar-header h3 {
         font-size: 0.9rem;
         margin: 0;
-    }
-
-    .sidebar-menu {
-        overflow-y: auto; /* Permite scroll dentro del menú */
-        flex-grow: 1;
-        padding: 10px 0;
     }
 
     .sidebar-menu a {
