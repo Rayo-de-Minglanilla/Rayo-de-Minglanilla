@@ -4,17 +4,15 @@
     --amarillo-rayo: #f1c40f;
     --sidebar-width: 260px;
 }
-
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 /* --- CUERPO Y FONDO --- */
-body { 
-    font-family: 'Segoe UI', sans-serif; 
-    display: flex; 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
     min-height: 100vh;
     color: #333;
     background-color: #000;
@@ -24,11 +22,637 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* --- BARRA LATERAL (Escritorio) --- */
 
-/* --- BARRA LATERAL (ARREGLADA PARA MÓVIL) --- */
+.sidebar-header { padding: 30px 20px; text-align: center; }
+.sidebar-logo { width: 80px; margin-bottom: 10px; }
+.sidebar-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.sidebar-menu a.active, .sidebar-menu a:hover {
+    background: var(--granate);
+    border-left: 5px solid var(--amarillo-rayo);
+}
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-section {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    animation: fadeIn 0.5s ease;
+}
+.content-section.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* --- BOTÓN MENÚ MÓVIL --- */
+
+.mobile-menu-btn {
+
+    display: none; /* Oculto en PC */
+
+    position: fixed;
+
+    top: 15px;
+
+    left: 15px;
+
+    z-index: 10000;
+
+    background: var(--granate);
+
+    color: white;
+
+    border: 2px solid var(--amarillo-rayo);
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* --- RESPONSIVE MÓVIL (768px o menos) --- */
+
+@media (max-width: 768px) {
+
+    .mobile-menu-btn {
+
+        display: flex; /* Se muestra en móvil */
+
+    }
+
+
+
+    .sidebar {
+
+        left: -280px; /* Escondido a la izquierda */
+
+    }
+
+
+
+    .sidebar.open {
+
+        left: 0; /* Aparece al pulsar botón */
+
+    }
+
+
+
+    .main-content {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        padding-top: 80px;
+
+    }
+
+
+
+    .welcome-banner { padding: 40px 20px; }
+
+}
+
+
+
+/* --- ESTILOS DE COMPONENTES (Contador, Tarjetas, etc) --- */
+
+.welcome-banner {
+
+    background: rgba(10, 33, 68, 0.8);
+
+    color: white;
+
+    padding: 60px;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    border: 2px solid var(--amarillo-rayo);
+
+    width: 100%;
+
+}
+
+
+
+.section-title h2 {
+
+    color: white;
+
+    background: var(--granate);
+
+    display: inline-block;
+
+    padding: 10px 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.paternidad-box {
+
+    background: linear-gradient(145deg, #0a2144, #7a1b2e);
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    border: 3px solid var(--amarillo-rayo);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+    margin: 20px 0;
+
+    max-width: 500px;
+
+}
+
+
+
+#contador-dias {
+
+    font-size: 5rem;
+
+    font-weight: 900;
+
+    text-shadow: 3px 3px 0px #000;
+
+}
+
+
+
+/* --- MERCHANDISING --- */
+
+.product-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+
+}
+
+
+
+.product-card img {
+
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: contain;
+
+    background: white;
+
+    display: block;
+
+    padding: 20px;
+
+}
+
+.noticia-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    border-left: 6px solid #7a1b2e;
+
+    position: relative;
+
+}
+
+
+
+.noticia-tag {
+
+    display: inline-block;
+
+    background: #7a1b2e;
+
+    color: white;
+
+    padding: 4px 12px;
+
+    border-radius: 20px;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.noticia-card h3 {
+
+    color: #333;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.noticia-card p {
+
+    color: #555;
+
+    line-height: 1.5;
+
+}
+
+
+
+.noticia-fecha {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 0.8rem;
+
+    color: #999;
+
+}
+
+
+
+/* --- SPONSORS --- */
+
+.sponsors-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+
+}
+
+/* Estilos para la cuadrícula de jugadores */
+
+.plantilla-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr; /* DOS COLUMNAS */
+
+    gap: 20px;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+
+
+.player-card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 2px solid #eee;
+
+}
+
+
+
+.mystery-img {
+
+    background: #2c3e50;
+
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 4rem;
+
+}
+
+#estadio img:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+.player-info {
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: #333;
+
+}
+
+
+
+/* Estilo especial para los Fichajes */
+
+.player-card.fichaje {
+
+    border: 2px solid #f1c40f; /* Borde dorado */
+
+}
+
+
+
+.player-card.fichaje .badge {
+
+    background: #f1c40f;
+
+    color: #000;
+
+    padding: 3px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.player-info h3 {
+
+    margin: 5px 0;
+
+    font-size: 1.1rem;
+
+}
+
+
+
+/* Responsivo para móviles: 1 columna si la pantalla es pequeña */
+
+@media (max-width: 600px) {
+
+    .plantilla-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+
+.sponsor-card {
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+}
+
+
+
+.img-logo {
+
+    max-width: 100%;
+
+    max-height: 80px;
+
+    object-fit: contain;
+
+}
+
+
+
+
+
+
+
+/* Opcional: Para que la barra de scroll sea finita y no afee el menú */
+
+.sidebar-menu::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,0.2);
+
+    border-radius: 10px;
+
+}
+
+/* Estilos para la cuadrícula de jugadores */
+
+.plantilla-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr; /* DOS COLUMNAS */
+
+    gap: 20px;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+#estadio img:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+.player-card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 2px solid #eee;
+
+}
+
+
+
+.mystery-img {
+
+    background: #2c3e50;
+
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 4rem;
+
+}
+
+
+
+.player-info {
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: #333;
+
+}
+
+
+
+/* Estilo especial para los Fichajes */
+
+.player-card.fichaje {
+
+    border: 2px solid #f1c40f; /* Borde dorado */
+
+}
+
+
+
+.player-card.fichaje .badge {
+
+    background: #f1c40f;
+
+    color: #000;
+
+    padding: 3px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.player-info h3 {
+
+    margin: 5px 0;
+
+    font-size: 1.1rem;
+
+}
+
+
+
+/* Responsivo para móviles: 1 columna si la pantalla es pequeña */
+
+@media (max-width: 600px) {
+
+    .plantilla-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* --- BARRA LATERAL ÚNICA Y CORREGIDA --- */
 .sidebar {
     width: var(--sidebar-width);
-    height: 100vh; /* Altura total de la pantalla */
+    height: 100vh;
     background: var(--azul-oscuro);
     color: white;
     position: fixed;
@@ -38,43 +662,38 @@ body {
     border-right: 4px solid var(--amarillo-rayo);
     transition: 0.3s ease;
     
-    /* ESTO ES LO QUE PERMITE EL SCROLL EN EL MÓVIL */
+    /* ESTO ES LO QUE PERMITE EL SCROLL */
     display: flex;
     flex-direction: column;
-    overflow-y: auto; 
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    overflow-y: auto;          /* Permite bajar si hay muchos elementos */
+    overflow-x: hidden;        /* Evita rebotes laterales */
+    -webkit-overflow-scrolling: touch; /* Hace que el scroll sea suave en iPhone */
 }
 
-/* Estilo de la barra de scroll para que no sea fea */
+/* Contenedor de los enlaces */
+.sidebar-menu {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Opcional: Para que la barra de scroll sea finita y no afee el menú */
 .sidebar::-webkit-scrollbar {
     width: 5px;
 }
 .sidebar::-webkit-scrollbar-thumb {
-    background: var(--amarillo-rayo);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
 }
 
-.sidebar-header { 
-    padding: 30px 20px; 
-    text-align: center; 
-    flex-shrink: 0; /* Que la cabecera no se encoja */
-}
-
-.sidebar-logo { width: 80px; margin-bottom: 10px; }
-
-.sidebar-menu {
-    flex-grow: 1;
-    padding-bottom: 40px; /* Espacio extra al final para que se vea el último botón */
-}
-
+/* --- ESTILOS DE LOS ENLACES --- */
 .sidebar-menu a {
     display: block;
     padding: 15px 25px;
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    border-left: 5px solid transparent;
+    border-left: 5px solid transparent; /* Para que no salte al hacer hover */
 }
 
 .sidebar-menu a.active, .sidebar-menu a:hover {
@@ -82,131 +701,25 @@ body {
     border-left: 5px solid var(--amarillo-rayo);
 }
 
-/* --- CONTENIDO PRINCIPAL --- */
-.main-content {
-    margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
-
-.content-section { 
-    display: none; 
-    width: 100%;
-    max-width: 900px; 
-    animation: fadeIn 0.5s ease;
-}
-
-.content-section.active { display: block; }
-
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(10px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
-
-/* --- BOTÓN MENÚ MÓVIL --- */
-.mobile-menu-btn {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 10000;
-    background: var(--granate);
-    color: white;
-    border: 2px solid var(--amarillo-rayo);
-    width: 45px;
-    height: 45px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    align-items: center;
-    justify-content: center;
-}
-
-/* --- RESPONSIVE MÓVIL --- */
+/* --- AJUSTE MÓVIL DENTRO DE LA MEDIA QUERY --- */
 @media (max-width: 768px) {
-    .mobile-menu-btn { 
-        display: flex; 
+    .mobile-menu-btn {
+        display: flex;
     }
 
     .sidebar {
-        left: -280px; /* Escondido */
-        width: 280px;
+        left: -280px; /* Escondido por defecto */
+        width: 280px; /* Un pelín más ancho en móvil para que sea fácil tocar */
     }
 
     .sidebar.open {
-        left: 0; /* Se abre con JS */
+        left: 0; /* Se muestra al abrir */
     }
 
-    .main-content { 
-        margin-left: 0; 
-        width: 100%; 
+    .main-content {
+        margin-left: 0;
+        width: 100%;
         padding: 20px;
-        padding-top: 80px; 
+        padding-top: 80px;
     }
-}
-
-/* --- TARJETAS DE NOTICIAS Y RUMORES --- */
-.noticia-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    border-left: 8px solid var(--granate);
-    width: 100%;
-}
-
-.noticia-card img {
-    width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 15px 0;
-    border: 1px solid #eee;
-}
-
-.noticia-tag {
-    display: inline-block;
-    background: var(--granate);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* --- PLANTILLA --- */
-.plantilla-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-.player-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid #eee;
-    text-align: center;
-}
-
-.mystery-img {
-    background: #2c3e50;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 5rem;
-}
-
-.player-info { padding: 20px; }
-
-.player-card.fichaje {
-    border: 3px solid var(--amarillo-rayo);
 }
