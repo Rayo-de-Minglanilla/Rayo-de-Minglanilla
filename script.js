@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             sidebar.classList.toggle('open');
+            document.body.classList.toggle('menu-open');
         });
 
         // Cerrar menú cuando se hace clic en el contenido principal
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // No cerrar si el clic es en el botón del menú
             if (!e.target.closest('.mobile-menu-btn') && sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
+                document.body.classList.remove('menu-open');
             }
         });
 
@@ -74,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.sidebar') && !e.target.closest('.mobile-menu-btn') && sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
+                document.body.classList.remove('menu-open');
             }
         });
     }
