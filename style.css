@@ -24,8 +24,21 @@ body {
 }
 /* --- BARRA LATERAL (Escritorio) --- */
 
-.sidebar-header { padding: 30px 20px; text-align: center; }
+.sidebar-header { 
+    padding: 30px 20px; 
+    text-align: center;
+    flex-shrink: 0;
+}
 .sidebar-logo { width: 80px; margin-bottom: 10px; }
+.sidebar-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
 .sidebar-menu a {
     display: block;
     padding: 15px 25px;
@@ -688,9 +701,8 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     min-height: 0;
+    overflow: hidden;
 }
 
 /* Opcional: Para que la barra de scroll sea finita y no afee el menú */
