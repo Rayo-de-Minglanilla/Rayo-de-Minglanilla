@@ -25,20 +25,48 @@ body {
     background-attachment: fixed;
 }
 
-/* --- BARRA LATERAL (Escritorio) --- */
+/* --- BARRA LATERAL (ARREGLADA PARA MÓVIL) --- */
 .sidebar {
     width: var(--sidebar-width);
-    height: 100vh;
+    height: 100vh; /* Altura total de la pantalla */
     background: var(--azul-oscuro);
     color: white;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 9999;
     border-right: 4px solid var(--amarillo-rayo);
     transition: 0.3s ease;
+    
+    /* ESTO ES LO QUE PERMITE EL SCROLL EN EL MÓVIL */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
 }
 
-.sidebar-header { padding: 30px 20px; text-align: center; }
+/* Estilo de la barra de scroll para que no sea fea */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--amarillo-rayo);
+    border-radius: 10px;
+}
+
+.sidebar-header { 
+    padding: 30px 20px; 
+    text-align: center; 
+    flex-shrink: 0; /* Que la cabecera no se encoja */
+}
+
 .sidebar-logo { width: 80px; margin-bottom: 10px; }
+
+.sidebar-menu {
+    flex-grow: 1;
+    padding-bottom: 40px; /* Espacio extra al final para que se vea el último botón */
+}
 
 .sidebar-menu a {
     display: block;
@@ -46,6 +74,7 @@ body {
     color: white;
     text-decoration: none;
     transition: 0.3s;
+    border-left: 5px solid transparent;
 }
 
 .sidebar-menu a.active, .sidebar-menu a:hover {
@@ -72,11 +101,14 @@ body {
 
 .content-section.active { display: block; }
 
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
 
 /* --- BOTÓN MENÚ MÓVIL --- */
 .mobile-menu-btn {
-    display: none; /* Oculto en PC */
+    display: none;
     position: fixed;
     top: 15px;
     left: 15px;
@@ -93,18 +125,19 @@ body {
     justify-content: center;
 }
 
-/* --- RESPONSIVE MÓVIL (768px o menos) --- */
+/* --- RESPONSIVE MÓVIL --- */
 @media (max-width: 768px) {
     .mobile-menu-btn { 
-        display: flex; /* Se muestra en móvil */
+        display: flex; 
     }
 
     .sidebar {
-        left: -280px; /* Escondido a la izquierda */
+        left: -280px; /* Escondido */
+        width: 280px;
     }
 
     .sidebar.open {
-        left: 0; /* Aparece al pulsar botón */
+        left: 0; /* Se abre con JS */
     }
 
     .main-content { 
@@ -113,281 +146,67 @@ body {
         padding: 20px;
         padding-top: 80px; 
     }
-
-    .welcome-banner { padding: 40px 20px; }
 }
 
-/* --- ESTILOS DE COMPONENTES (Contador, Tarjetas, etc) --- */
-.welcome-banner {
-    background: rgba(10, 33, 68, 0.8); 
-    color: white;
-    padding: 60px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    border: 2px solid var(--amarillo-rayo);
-    width: 100%;
-}
-
-.section-title h2 {
-    color: white;
-    background: var(--granate);
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.paternidad-box {
-    background: linear-gradient(145deg, #0a2144, #7a1b2e);
-    color: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    border: 3px solid var(--amarillo-rayo);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin: 20px 0;
-    max-width: 500px;
-}
-
-#contador-dias {
-    font-size: 5rem;
-    font-weight: 900;
-    text-shadow: 3px 3px 0px #000;
-}
-
-/* --- MERCHANDISING --- */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    width: 100%;
-}
-
-.product-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    background: white;
-    display: block;
-    padding: 20px;
-}
+/* --- TARJETAS DE NOTICIAS Y RUMORES --- */
 .noticia-card {
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-left: 6px solid #7a1b2e;
-    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border-left: 8px solid var(--granate);
+    width: 100%;
+}
+
+.noticia-card img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid #eee;
 }
 
 .noticia-tag {
     display: inline-block;
-    background: #7a1b2e;
+    background: var(--granate);
     color: white;
-    padding: 4px 12px;
+    padding: 5px 15px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.noticia-card h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.noticia-card p {
-    color: #555;
-    line-height: 1.5;
-}
-
-.noticia-fecha {
-    display: block;
-    margin-top: 15px;
-    font-size: 0.8rem;
-    color: #999;
-}
-
-/* --- SPONSORS --- */
-.sponsors-grid {
+/* --- PLANTILLA --- */
+.plantilla-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     width: 100%;
 }
-/* Estilos para la cuadrícula de jugadores */
-.plantilla-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* DOS COLUMNAS */
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 .player-card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
     border: 2px solid #eee;
+    text-align: center;
 }
 
 .mystery-img {
     background: #2c3e50;
-    height: 150px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 4rem;
-}
-#estadio img:hover {
-    transform: scale(1.05);
+    font-size: 5rem;
 }
 
-.player-info {
-    padding: 15px;
-    text-align: center;
-    color: #333;
-}
+.player-info { padding: 20px; }
 
-/* Estilo especial para los Fichajes */
 .player-card.fichaje {
-    border: 2px solid #f1c40f; /* Borde dorado */
-}
-
-.player-card.fichaje .badge {
-    background: #f1c40f;
-    color: #000;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.player-info h3 {
-    margin: 5px 0;
-    font-size: 1.1rem;
-}
-
-/* Responsivo para móviles: 1 columna si la pantalla es pequeña */
-@media (max-width: 600px) {
-    .plantilla-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.sponsor-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    border-radius: 12px;
-}
-
-.img-logo {
-    max-width: 100%;
-    max-height: 80px;
-    object-fit: contain;
-}
-.sidebar {
-    /* ... tus otros estilos (width, background, etc) ... */
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh; /* Que no mida más que la pantalla */
-}
-
-.sidebar-menu {
-    overflow-y: auto; /* Esto permite bajar (hacer scroll) solo en el menú */
-    flex-grow: 1;    /* Hace que el menú ocupe el espacio sobrante */
-}
-
-/* Opcional: Para que la barra de scroll sea finita y no afee el menú */
-.sidebar-menu::-webkit-scrollbar {
-    width: 5px;
-}
-.sidebar-menu::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.2);
-    border-radius: 10px;
-}
-/* Estilos para la cuadrícula de jugadores */
-.plantilla-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* DOS COLUMNAS */
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-#estadio img:hover {
-    transform: scale(1.05);
-}
-
-.player-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #eee;
-}
-
-.mystery-img {
-    background: #2c3e50;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 4rem;
-}
-
-.player-info {
-    padding: 15px;
-    text-align: center;
-    color: #333;
-}
-
-/* Estilo especial para los Fichajes */
-.player-card.fichaje {
-    border: 2px solid #f1c40f; /* Borde dorado */
-}
-
-.player-card.fichaje .badge {
-    background: #f1c40f;
-    color: #000;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.player-info h3 {
-    margin: 5px 0;
-    font-size: 1.1rem;
-}
-
-/* Responsivo para móviles: 1 columna si la pantalla es pequeña */
-@media (max-width: 600px) {
-    .plantilla-grid {
-        grid-template-columns: 1fr;
-    }
-}
-.sidebar { /* O el nombre que tenga tu clase de menú */
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 250px; /* O el ancho que tengas */
-    
-    /* ESTO ES LO QUE ARREGLA EL PROBLEMA: */
-    overflow-y: auto;          /* Permite hacer scroll si el contenido es largo */
-    overflow-x: hidden;        /* Evita que se mueva hacia los lados */
-    scrollbar-width: thin;     /* Para que la barra de scroll sea finita */
+    border: 3px solid var(--amarillo-rayo);
 }
