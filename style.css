@@ -61,13 +61,14 @@ body.menu-open {
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
-    height: 100vh;
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    
+    /* AÑADE ESTO: */
+    min-height: 100vh; /* Altura mínima de la pantalla */
+    overflow-y: visible; /* Asegura que el contenido sea visible al bajar */
 }
 .content-section {
     display: none;
@@ -790,4 +791,15 @@ body.menu-open {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
+}
+/* Esto asegura que la página siempre tenga un poquito de margen para moverse */
+html, body {
+    overflow-x: hidden;
+    height: auto;
+    min-height: 100%;
+}
+
+.content-section {
+    min-height: 80vh; /* Obliga a cada pestaña a ser casi tan alta como la pantalla */
+    padding-bottom: 100px; /* Margen de seguridad abajo para que no tape el menú */
 }
