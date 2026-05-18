@@ -92,7 +92,7 @@ const baseCronicas = {
         texto: `
             <p>Un gran Rayo de Minglanilla se impone ante la Pesquera en un derbi emocionante</p>
             <div style="margin-bottom:25px; text-align:center;">
-                <img src="foto-partido.jpg.jpeg" alt="11 Titular Rayo de Minglanilla" style="width:100%; border-radius:15px; box-shadow: 0 8px 15px rgba(0,0,0,0.3); border: 3px solid #7a1b2e;">
+                <img src="foto-partido1.jpg.jpeg" alt="11 Titular Rayo de Minglanilla" style="width:100%; border-radius:15px; box-shadow: 0 8px 15px rgba(0,0,0,0.3); border: 3px solid #7a1b2e;">
                 <p style="font-size:0.8rem; color:#666; margin-top:10px; font-weight:bold;">El 11 que hizo historia en el derbi</p>
             </div>
             <p>Hay partidos que se ganan con fútbol y otros que se ganan con el escudo. El derbi comenzó con máxima tensión y un jarro de agua fría: <strong>ellos empezaron ganando</strong> tras un penalti tempranero que puso cuesta arriba el encuentro. Pese al golpe, el Rayo avisó con un zapatazo de <strong>Alen</strong> al <strong>larguero</strong> que hizo temblar la portería rival.</p>
